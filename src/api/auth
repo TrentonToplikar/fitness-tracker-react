@@ -1,0 +1,35 @@
+// const cohort = "2211-FTB-ET-WEB-FT";
+
+//registering a user to our API
+//sends response and shows a token in an object
+export const registerUser = async (username, password) => {
+  try {
+    const response = await fetch(
+      // `https://strangers-things.herokuapp.com/api/${cohort}/users/register/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user: {
+            username,
+            password,
+          },
+        }),
+      }
+    );
+    //object with data that contains a token which is needed to make other request to the API
+    //deconstruction of the object data same as token = response.data.token
+    //token used as a key to access other things in the API (bc we must be a register user to utilize the API)
+    // this is saying const token = response.data.token
+    const {
+      data: { token },
+    } = await response.json();
+    //console.log("myresponse data", token);
+    return token;
+  } catch (error) {
+    console.error(error);
+    console.log("myresponse data", token);
+  }
+};
