@@ -1,11 +1,9 @@
-// const cohort = "2211-FTB-ET-WEB-FT";
-
 //registering a user to our API
 //sends response and shows a token in an object
 export const registerUser = async (username, password) => {
   try {
     const response = await fetch(
-      // `https://strangers-things.herokuapp.com/api/${cohort}/users/register/`,
+      `http://fitnesstrac-kr.herokuapp.com/api/users/register`,
       {
         method: "POST",
         headers: {
