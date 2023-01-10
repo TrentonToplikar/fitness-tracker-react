@@ -31,33 +31,7 @@ export const registerUser = async (username, password) => {
   }
 };
 
-export const loginUser = async (username, password) => {
-  try {
-    const response = await fetch(`${APIURL}/users/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        user: {
-          username,
-          password,
-        },
-      }),
-    });
-    //object with data that contains a token which is needed to make other request to the API
-    //deconstruction of the object data same as token = response.data.token
-    //token used as a key to access other things in the API (bc we must be a register user to utilize the API)
-    // this is saying const token = response.data.token
-    const { data } = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
-    console.log("myresponse data", token);
-  }
-};
-
-export const getMe = async (token) => {
+export const fetchMe = async (token) => {
   try {
     const response = await fetch(`${APIURL}/users/me`, {
       headers: {
