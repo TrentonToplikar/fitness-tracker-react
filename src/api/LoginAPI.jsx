@@ -1,6 +1,7 @@
 const APIURL = `http://fitnesstrac-kr.herokuapp.com/api`;
 
 ////////// this logs you into the website and gives you a token  \\\\\\\\\\
+// POST /api/users/login
 export const LoginAPI = async (username, password) => {
   try {
     const loginVerify = await fetch(

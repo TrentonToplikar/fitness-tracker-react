@@ -30,6 +30,7 @@ export const CreateRoutines = async ({
 
     const result = response.json();
     console.log(result);
+    return result
   } catch (error) {
     console.error("oh no");
   }

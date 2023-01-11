@@ -2,6 +2,8 @@ const APIURL = `http://fitnesstrac-kr.herokuapp.com/api`;
 
 //registering a user to our API
 //sends response and shows a token in an object
+
+// POST /api/users/register
 export const registerUser = async (username, password) => {
   try {
     const response = await fetch(`${APIURL}/users/register`, {

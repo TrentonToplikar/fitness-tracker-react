@@ -62,7 +62,7 @@ export const Navbar = ({ setToken, user }) => {
           </Link>
           <Form />
         </nav>
-        <img id="logo" src="Stranger_Things_logo.png" />
+        {/* <img id="logo" src="Stranger_Things_logo.png" /> */}
         <nav>
           <RegisterOrProfile />
           <LoginLogout />
