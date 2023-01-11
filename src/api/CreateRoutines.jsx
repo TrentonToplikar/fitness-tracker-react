@@ -34,3 +34,5 @@ export const CreateRoutines = async ({
     console.error("oh no");
   }
 };
+
+export default CreateRoutines;

@@ -31,6 +31,8 @@ export const registerUser = async (username, password) => {
   }
 };
 
+//another API request that is going to take in a token
+//takes the token in and returns data
 export const fetchMe = async (token) => {
   try {
     const response = await fetch(`${APIURL}/users/me`, {
