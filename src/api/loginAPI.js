@@ -10,17 +10,13 @@ export const loginAPI = async (username, password) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user: {
-          username,
-          password,
-        },
-        message,
-        token,
+        username,
+        password,
       }),
     });
     const result = await loginVerify.json();
     console.log(result);
-    return result.token;
+    return result;
   } catch (error) {
     console.error(error);
   }
