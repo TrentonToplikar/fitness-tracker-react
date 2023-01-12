@@ -1,32 +1,23 @@
-// edit Routines
 const APIURL = `http://fitnesstrac-kr.herokuapp.com/api`;
 
 ////////// create routines \\\\\\\\\\
-export const createRoutines = async ({
-  token,
-  name,
-  goal,
-  creatorName,
-  activities,
-}) => {
+export const createRoutines = async (token, name, goal, isPublic) => {
   try {
-    const response = await fetch(`${APIURL}/users/${creatorName}/routines`, {
+    console.log("THIS IS MY TOKE", token);
+    const response = await fetch(`${APIURL}/routines`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
-        routinesByUser: {
-          name: name,
-          goal: goal,
-          creatorName: creatorName,
-          activities: activities,
-        },
+        name: name,
+        goal: goal,
+        isPublic: isPublic,
       }),
     });
 
-    const result = response.json();
+    const result = await response.json();
     console.log(result);
     return result;
   } catch (error) {

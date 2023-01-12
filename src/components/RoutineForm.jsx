@@ -17,27 +17,36 @@ import { createRoutines } from "../api/myRoutinesAPI";
       // be able to remove any activity from the routine
 
 
-export const RoutineForm = ({ token }) => {
+export const RoutineForm = ({ privateRoutineList, setPrivateRoutineList }) => {
     const [name, setName] = useState("");
     const [goal, setGoal] = useState("");
     const [creatorName, setCreatorName] = useState("");
     const [activities, setActivities] = useState("");
+    const [isPublic, setIsPublic] = useState(false)
+    const token = localStorage.getItem("token")
+
+    const handleSubmit= async (e) => {
+      if (token) {
+        console.log("DO WE HAVE THE TOEKN??", token)
+        e.preventDefault();
+       const newRoutine = await createRoutines( token, name, goal, isPublic );
+        setPrivateRoutineList([newRoutine, ...privateRoutineList])
+        setName("");
+        setGoal("");
+        setCreatorName("");
+        setActivities("");
+
+      } else {
+        window.alert("Please Login or Register");
+      }
+    }
 
     return (
         <form
           className="RoutineForm"
-          onSubmit={async (e) => {
-            if (token) {
-              e.preventDefault();
-              createRoutines({ token, name, goal, creatorName, activities });
-              setName("");
-              setGoal("");
-              setCreatorName("");
-              setActivities("");
-            } else {
-              window.alert("Please Login or Register");
-            }
-          }}
+          onSubmit={ (e) =>
+            handleSubmit(e)
+          }
         >
           <label>Routine:</label>
           <input

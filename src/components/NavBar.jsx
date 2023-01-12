@@ -73,7 +73,7 @@ export const Navbar = ({ setToken, user }) => {
         );
       } else {
         return (
-          <NavLink to="login" id="login">
+          <NavLink to="Login" id="login">
             {" "}
             {localStorage.getItem("user")}{" "}
           </NavLink>

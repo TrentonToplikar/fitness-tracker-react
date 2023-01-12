@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import {  } from "react-dom";
 import {fetchMyRoutines} from "../api/myRoutinesAPI";
+import { RoutineForm } from "./RoutineForm";
 
 export const PrivateRoutines= (props) => {
   const [privateRoutineList, setPrivateRoutineList] = useState([]);
@@ -14,8 +15,9 @@ export const PrivateRoutines= (props) => {
       setPrivateRoutineList(data);
       // console.log("THIS IS MY DATA------->",data);
       
-    };
-    getAllPrivateRoutines();
+    }; if (localStorage.getItem("user")){
+      getAllPrivateRoutines();
+    }
   }, []);
 // rending the routine/activities list
   const routineAndActivitiesList = privateRoutineList?.map(({id, creatorName, name, goal, activities}) => {
@@ -24,7 +26,6 @@ export const PrivateRoutines= (props) => {
     return( <div className="All Routines" key={id}>
     <h2>Name: {name}</h2>
     <h3>Goal: {goal}</h3>
-    <h3>Creator Name: {creatorName}</h3>
     <div>
 
       {
@@ -41,7 +42,12 @@ export const PrivateRoutines= (props) => {
   </div>)
   }   
   )
-  return <div className="All Routines">{routineAndActivitiesList}</div>;
+  return (
+    <div className="RoutineForm"> 
+    <RoutineForm privateRoutineList={privateRoutineList} setPrivateRoutineList={setPrivateRoutineList}/>
+  <div className="All Routines">{routineAndActivitiesList}</div>
+    </div>)
+
 }
 
 

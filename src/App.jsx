@@ -5,7 +5,7 @@ import { me } from "./api/authAPI.js";
 import { LoginForm } from "./components/Login";
 import { RoutineForm } from "./components/RoutineForm";
 import { PublicRoutines} from "./components/PublicRoutines";
-import { PrivateRoutines } from "./components/FetchMyRoutines";
+import { PrivateRoutines } from "./components/MyRoutines";
 import { Navbar } from "./components/NavBar";
 import Home from "./components/Home";
 // import { ActivityForm } from "./components/Activities";       ******THIS NEEDS TO BE COMMENTED BACK IN!
@@ -70,7 +70,8 @@ function App() {
         <Route path="/Routines" element={<PublicRoutines publicRoutineList={publicRoutineList} setPublicRoutineList={setPublicRoutineList}/> } />
 
         {/* // my routines (private) */}
-        <Route path="/MyRoutines" element={<PrivateRoutines privateRoutineList={privateRoutineList} setPrivateRoutineList={setPrivateRoutineList} token ={token} user={user} /> } />
+        <Route path="/MyRoutines" element={<PrivateRoutines privateRoutineList={privateRoutineList} setPrivateRoutineList={setPrivateRoutineList} token ={token} user={user} /> }/>
+        {/* <Route path="/MyRoutines" element={<RoutineForm privateRoutineList={privateRoutineList} setPrivateRoutineList={setPrivateRoutineList} token ={token} user={user} /> }/> */}
 
       
         {/* Activities */}
