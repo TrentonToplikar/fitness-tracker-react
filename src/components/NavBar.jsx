@@ -3,19 +3,12 @@ import React from "react";
 import { NavLink } from "react-router-dom"
 import { Logout } from "./Login";
 import { PublicRoutines } from "./PublicRoutines";
+import { RoutineForm } from "./RoutineForm";
 
 
 
 
 export const Navbar = ({ setToken, user }) => {
-    
-  // return (
-    
-  //     <NavLink to='/'>Home</NavLink>
-  //     <NavLink to='/login'>Login</NavLink>
-  //     <NavLink to='/signup'>Register</NavLink>
-    
-  
 
   const LoginLogout = () => {
       if (localStorage.getItem("token")) {
@@ -39,34 +32,36 @@ export const Navbar = ({ setToken, user }) => {
         );
       }
     };
-    // const PublicRoutinePage = () => {
-    //   return (
-    //     <NavLink
-    //         to="/Routines"
-    //         id="PublicRoutines"
-    //         onClick={() => {
-    //           GetAllPublicRoutines();
-    //         }}
-    //         ></NavLink>
-    //   );
-    //     // return (
-    //     //   <NavLink to="Login" id="login">
-    //     //     {" "}
-    //     //     Login{" "}
-    //     //     GetAllPublicRoutines()
-    //     //   </NavLink>
-    //     // );
-    // };
-    const Form = () => {
-      if (localStorage.getItem("token")) {
+    const MyRoutines = () => {
+      
+      return (
+        <NavLink
+            to="/myRoutines"
+            id="MyRoutines"
+            onClick={() => {
+              RoutineForm();
+            }}
+            ></NavLink>
+      );
+     return (
+      <NavLink to="Login" id="login">
+   {" "}
+     Login{" "}
+  GetAllPublicRoutines()
+     </NavLink>
+     );
+    };
+    const PublicRoutines = () => {
+     
         return (
-          <NavLink to="/RoutineForm" id="routineForm">
+          <NavLink to="/routines" id="publicRoutines">
             {" "}
-            RoutineForm{" "}
+            Routines{" "}
           </NavLink>
         );
-      }
+      
     };
+    
     const RegisterOrProfile = () => {
       if (localStorage.getItem("token")) {
         return (
@@ -91,7 +86,7 @@ export const Navbar = ({ setToken, user }) => {
             {" "}
             Home{" "}
           </NavLink>
-          <Form />
+          <PublicRoutines />
         </nav>
         {/* <img id="logo" src="Stranger_Things_logo.png" /> */}
         <nav>

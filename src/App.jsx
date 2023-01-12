@@ -53,7 +53,7 @@ function App() {
       <Routes>
 
         {/* Home */}
-        <Route path="/" element ={<Home publicRoutineList={publicRoutineList} setPublicRoutineList={setPublicRoutineList}/>} />
+        <Route path="/" element ={<Home  />} />
 
         {/* Login  */}
         <Route path="/Login" element={<LoginForm setToken={setToken} setUser={setUser} />} />
@@ -62,7 +62,7 @@ function App() {
         <Route path="/Register" element={<Register setToken={setToken} />} />
 
         {/* //(main)Routines(public) */}
-        <Route path="/Routines" element={<PublicRoutines routines={routines} setRoutines={setRoutines}/> } />
+        <Route path="/Routines" element={<PublicRoutines publicRoutineList={publicRoutineList} setPublicRoutineList={setPublicRoutineList}/> } />
 
         {/* // my routines (private) */}
         <Route path="/MyRoutines" element={<RoutineForm myRoutines={myRoutines} setMyRoutines={setMyRoutines} token ={token} /> } />
@@ -82,3 +82,7 @@ function App() {
 }
 
 export default App
+
+
+// routines={routines} setRoutines={setRoutines}
+// setPublicRoutineList={setPublicRoutineList}

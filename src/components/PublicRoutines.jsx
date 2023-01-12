@@ -23,20 +23,28 @@ export const PublicRoutines= () => {
   console.log(publicRoutineList);
 // rending the routine/activities list
   const routineAndActivitiesList = publicRoutineList.map(({id, creatorName, name, goal, activities}) => {
+    // console.log("this is our activities!!!!:", activities);
+    // console.log(activities.name);
     return( <div className="All Routines" key={id}>
-    <h2>{name}</h2>
-    <h3>{goal}</h3>
-    <h3>{creatorName}</h3>
+    <h2>Name: {name}</h2>
+    <h3>Goal: {goal}</h3>
+    <h3>Creator Name: {creatorName}</h3>
     <div>
-      <h2>Name {activities.name}</h2>
-      <h2>Description{activities.description}</h2>
-      <h2>Duration{activities.duration}</h2>
+
+      {
+      activities?.map(({id, name, description, count, duration}) => {
+      return( <div className="All Activities" key={id}>
+      <h3>Activity Name:  {name}</h3>
+      <h4>Description: {description}</h4>
+      <h4>Duration: {duration}</h4>
+      <h4>Count: {count}</h4>
+      </div>
+        )})
+      }
     </div>
   </div>)
   }   
   )
-
-    
   return <div className="All Routines">{routineAndActivitiesList}</div>;
 }
 
