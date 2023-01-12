@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { LoginAPI } from "../api/LoginAPI";
-import { fetchMe } from "../api/auth";
+import { loginAPI } from "../api/loginAPI";
+import { me } from "../api/authAPI.js";
 
 ////////// this is the login form that lets you put your username and password. very secure \\\\\\\\\\
 export const LoginForm = ({ setToken, setUser }) => {
@@ -11,8 +11,8 @@ export const LoginForm = ({ setToken, setUser }) => {
     <form
       onSubmit={async (e) => {
         e.preventDefault();
-        const token = await LoginAPI(username, password);
-        const user = await fetchMe(token);
+        const token = await loginAPI(username, password);
+        const user = await me(token);
         // setUser(user.username);
         setToken(token);
         localStorage.setItem("token", token);

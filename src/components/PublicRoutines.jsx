@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-// import {  } from "../api/CreateRoutines";
+import React, { useState, useEffect } from "react";
+// import {  } from "react-dom";
+import {fetchPublicRoutines} from "../api/routinesAPI";
 
 //THIS IS PUBLIC ROUTINES AND UNREGISTERED USER
         // see a list of all public routines showing:
@@ -8,62 +9,35 @@ import React, { useState } from "react";
 
 
 
-// export const GetAllRoutines = ( creatorId, createrName, isPublic, name, goal, activity) => {
+export const PublicRoutines= () => {
+  const [publicRoutineList, setPublicRoutineList] = useState([]);
+  
+  useEffect(() => {
+    const getAllPublicRoutines = async () => {
+      const data = await fetchPublicRoutines();
+      setPublicRoutineList(data);
+      
+    };
+    getAllPublicRoutines();
+  }, []);
+  console.log(publicRoutineList);
+// rending the routine/activities list
+  const routineAndActivitiesList = publicRoutineList.map(({id, activityId, creatorId, creatorName, isPublic, name, goal, activities}) => {
+    return( <div className="All Routines" key={id}>
+    <h2>Name {name}</h2>
+    <h3>Goal {goal}</h3>
+    <h3>CreatorId {creatorName}</h3>
+    <div>
+      <h2>Name {activities.name}</h2>
+      <h2>Description{activities.description}</h2>
+      <h2>Duration{activities.duration}</h2>
+    </div>
+  </div>)
+  }   
+  )
+
     
+  return <div className="All Routines">{routineAndActivitiesList}</div>;
+}
 
 
-    
-        
-//         } catch (error) {
-//           console.error(error);
-//         }
-//         return (
-//             <form
-//               className="GetAllRoutines"
-//               onSubmit={async (e) => {
-//                 if (token) {
-//                   e.preventDefault();
-//                   CreateRoutines({ token, name, goal, creatorName, activities });
-//                   setName("");
-//                   setGoal("");
-//                   setCreatorName("");
-//                   setActivities("");
-//                 } else {
-//                   window.alert("Please Login or Register");
-//                 }
-//               }}
-//             >
-//               <label>Routine:</label>
-//               <input
-//                 value={name}
-//                 onChange={(e) => setName(e.target.value)}
-//                 type="text"
-//                 placeholder="Enter Routine Here"
-//               ></input>
-//               <label>Goal:</label>
-//               <input
-//                 value={goal}
-//                 onChange={(e) => setGoal(e.target.value)}
-//               ></input>
-//               <label>Location:</label>
-//               <input
-//                 value={creatorName}
-//                 onChange={(e) => setCreatorName(e.target.value)}
-//               ></input>
-//               <label>Price:</label>
-//               <input
-//                 value={activities}
-//                 onChange={(e) => setActivities(e.target.value)}
-//               ></input>
-//               <label>Delivery:</label>
-//               <button type="submit">Submit</button>
-//             </form>
-//           );
-//         };
-//       };
-// }
-
-
-
-
-   

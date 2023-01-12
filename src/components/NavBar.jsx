@@ -1,13 +1,26 @@
 import React from "react";
 // import "./NavBar.css";
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { Logout } from "./Login";
+import { PublicRoutines } from "./PublicRoutines";
+
+
+
 
 export const Navbar = ({ setToken, user }) => {
-    const LoginLogout = () => {
+    
+  // return (
+    
+  //     <NavLink to='/'>Home</NavLink>
+  //     <NavLink to='/login'>Login</NavLink>
+  //     <NavLink to='/signup'>Register</NavLink>
+    
+  
+
+  const LoginLogout = () => {
       if (localStorage.getItem("token")) {
         return (
-          <Link
+          <NavLink
             to="/"
             id="logout"
             onClick={() => {
@@ -15,51 +28,69 @@ export const Navbar = ({ setToken, user }) => {
             }}
           >
             Logout
-          </Link>
+          </NavLink>
         );
       } else {
         return (
-          <Link to="Login" id="login">
+          <NavLink to="Login" id="login">
             {" "}
             Login{" "}
-          </Link>
+          </NavLink>
         );
       }
     };
+    // const PublicRoutinePage = () => {
+    //   return (
+    //     <NavLink
+    //         to="/Routines"
+    //         id="PublicRoutines"
+    //         onClick={() => {
+    //           GetAllPublicRoutines();
+    //         }}
+    //         ></NavLink>
+    //   );
+    //     // return (
+    //     //   <NavLink to="Login" id="login">
+    //     //     {" "}
+    //     //     Login{" "}
+    //     //     GetAllPublicRoutines()
+    //     //   </NavLink>
+    //     // );
+    // };
     const Form = () => {
       if (localStorage.getItem("token")) {
         return (
-          <Link to="/PostForm" id="postForm">
+          <NavLink to="/PostForm" id="postForm">
             {" "}
             PostForm{" "}
-          </Link>
+          </NavLink>
         );
       }
     };
     const RegisterOrProfile = () => {
       if (localStorage.getItem("token")) {
         return (
-          <Link to="Profile" id="profile">
+          <NavLink to="Profile" id="profile">
             {" "}
             {localStorage.getItem("user")}{" "}
-          </Link>
+          </NavLink>
         );
       } else {
         return (
-          <Link to="Register" id="register">
+          <NavLink to="Register" id="register">
             {" "}
             Register{" "}
-          </Link>
+          </NavLink>
         );
       }
     };
     return (
       <div id="navbar">
         <nav>
-          <Link to="/" id="home">
+          <NavLink to="/" id="home">
             {" "}
             Home{" "}
-          </Link>
+          </NavLink>
           <Form />
         </nav>
         {/* <img id="logo" src="Stranger_Things_logo.png" /> */}

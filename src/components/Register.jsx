@@ -1,5 +1,5 @@
-import {React, useState} from "react";
-import { registerUser } from "../api/auth";
+import React, {useState} from "react";
+import { registerUser } from "../api/authAPI.js";
 
 //if token, do this
 // if no token, do this...

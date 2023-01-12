@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CreateRoutines } from "../api/CreateRoutines";
+import { createRoutines } from "../api/myRoutinesAPI";
 
 
 
@@ -29,7 +29,7 @@ export const RoutineForm = ({ token }) => {
           onSubmit={async (e) => {
             if (token) {
               e.preventDefault();
-              CreateRoutines({ token, name, goal, creatorName, activities });
+              createRoutines({ token, name, goal, creatorName, activities });
               setName("");
               setGoal("");
               setCreatorName("");
@@ -67,7 +67,6 @@ export const RoutineForm = ({ token }) => {
             type="text"
             placeholder="Enter Activities Here"
           ></input>
-          <label>Delivery:</label>
           <button type="submit">Submit</button>
         </form>
       );

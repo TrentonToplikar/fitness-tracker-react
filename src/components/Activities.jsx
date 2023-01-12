@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CreateActivities } from "../api/CreateActivities";
+import { createActivities } from "../api/activtiesAPI";
 
 // As an UNREGISTERED VISITOR on the Activities tab, I want to:
     // see a list of all activities which have been created
@@ -18,7 +18,7 @@ export const ActivityForm = ({ token }) => {
           onSubmit={async (e) => {
             if (token) {
               e.preventDefault();
-              CreateActivities({ token, name, description });
+              createActivities({ token, name, description });
               setName("");
               setDescription("");
             } else {
