@@ -5,6 +5,7 @@ import { me } from "./api/authAPI.js";
 import { LoginForm } from "./components/Login";
 import { RoutineForm } from "./components/RoutineForm";
 import { PublicRoutines} from "./components/PublicRoutines";
+import { PrivateRoutines } from "./components/FetchMyRoutines";
 import { Navbar } from "./components/NavBar";
 import Home from "./components/Home";
 // import { ActivityForm } from "./components/Activities";       ******THIS NEEDS TO BE COMMENTED BACK IN!
@@ -13,18 +14,22 @@ import './App.css'
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState("");
   const [ isLoggedIn, setIsLoggedIn ] = useState(false);
   const [ routines, setRoutines ] = useState([])
   const [ myRoutines, setMyRoutines ] = useState([])
   const [publicRoutineList, setPublicRoutineList] = useState([]);
+  const [privateRoutineList, setPrivateRoutineList] = useState([]);
   // const [ activities, setActivites ] = useState([])      ******THIS NEEDS TO BE COMMENTED BACK IN!
 
 
   useEffect(() => {
     if (token) {
       const getMe = async () => {
-        setUser(await me(token));
+        const username = await me();
+        localStorage.setItem("user", username)
+        console.log("THIS IS getMe", username)
+        setUser(username);
         setIsLoggedIn(!isLoggedIn);
       };
       getMe();
@@ -65,8 +70,9 @@ function App() {
         <Route path="/Routines" element={<PublicRoutines publicRoutineList={publicRoutineList} setPublicRoutineList={setPublicRoutineList}/> } />
 
         {/* // my routines (private) */}
-        <Route path="/MyRoutines" element={<RoutineForm myRoutines={myRoutines} setMyRoutines={setMyRoutines} token ={token} /> } />
+        <Route path="/MyRoutines" element={<PrivateRoutines privateRoutineList={privateRoutineList} setPrivateRoutineList={setPrivateRoutineList} token ={token} user={user} /> } />
 
+      
         {/* Activities */}
         {/* <Route path="/Activities" element={<ActivityForm activities={activities} setActivities=[setActivities] token ={token} /> } /> */}
         {/* ******THIS NEEDS TO BE COMMENTED BACK IN!^^^^^^^^^^^^^^^^^^ */}

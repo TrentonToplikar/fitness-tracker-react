@@ -51,7 +51,7 @@ export const authenticateUser = async (username, password, type) => {
     if (!result.data.token) {
       return;
     } else {
-      window.localStorage.setItem("strange-token", result.data.token);
+      window.localStorage.setItem("token", result.data.token);
 
       return await me();
     }
@@ -64,10 +64,10 @@ export const authenticateUser = async (username, password, type) => {
 //takes the token in and returns data
 export const me = async () => {
   try {
-    const token = window.localStorage.getItem("fitness-token");
+    const token = window.localStorage.getItem("token");
 
     if (token) {
-      const response = await fetch(`${API_URL}/users/me`, {
+      const response = await fetch(`${APIURL}/users/me`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -75,9 +75,9 @@ export const me = async () => {
         },
       });
 
-      const { data: user } = await response.json();
-      console.log("hey look it is me: ", user);
-      return user;
+      const data = await response.json();
+      console.log("hey look it is me: ", data);
+      return data.username;
     }
     return;
   } catch (error) {

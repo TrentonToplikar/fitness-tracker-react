@@ -32,25 +32,26 @@ export const Navbar = ({ setToken, user }) => {
         );
       }
     };
-    const MyRoutines = () => {
-      
-      return (
-        <NavLink
-            to="/myRoutines"
-            id="MyRoutines"
-            onClick={() => {
-              RoutineForm();
-            }}
-            ></NavLink>
-      );
-     return (
-      <NavLink to="Login" id="login">
-   {" "}
-     Login{" "}
-  GetAllPublicRoutines()
-     </NavLink>
-     );
-    };
+  //   const MyRoutines = () => {
+  //     if (localStorage.getItem("token")) {
+  //     return (
+  //       <NavLink
+  //           to="/myRoutines"
+  //           id="MyRoutines"
+  //           onClick={() => {
+  //             RoutineForm();
+  //           }}
+  //           ></NavLink>
+  //     );
+  //   }
+  // //    return (
+  // //     <NavLink to="Login" id="login">
+  // //  {" "}
+  // //    Login{" "}
+  // // GetAllPublicRoutines()
+  // //    </NavLink>
+  // //    );
+  //   };
     const PublicRoutines = () => {
      
         return (
@@ -62,6 +63,25 @@ export const Navbar = ({ setToken, user }) => {
       
     };
     
+    const MyRoutines = () => {
+      if (localStorage.getItem("token")) {
+        return (
+          <NavLink to="MyRoutines" id="RoutineForm">
+            {" "}
+            MyRoutines{" "}
+          </NavLink>
+        );
+      } else {
+        return (
+          <NavLink to="login" id="login">
+            {" "}
+            {localStorage.getItem("user")}{" "}
+          </NavLink>
+        );
+      }
+    };
+
+
     const RegisterOrProfile = () => {
       if (localStorage.getItem("token")) {
         return (
@@ -87,6 +107,7 @@ export const Navbar = ({ setToken, user }) => {
             Home{" "}
           </NavLink>
           <PublicRoutines />
+          <MyRoutines />
         </nav>
         {/* <img id="logo" src="Stranger_Things_logo.png" /> */}
         <nav>

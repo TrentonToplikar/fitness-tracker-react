@@ -1,4 +1,5 @@
 // edit Routines
+const APIURL = `http://fitnesstrac-kr.herokuapp.com/api`;
 
 ////////// create routines \\\\\\\\\\
 export const createRoutines = async ({
@@ -26,6 +27,51 @@ export const createRoutines = async ({
     });
 
     const result = response.json();
+    console.log(result);
+    return result;
+  } catch (error) {
+    console.error("oh no");
+  }
+};
+
+export const fetchMyRoutines = async (user) => {
+  try {
+    const token = window.localStorage.getItem("token");
+    console.log("THISIS THE USER", user);
+    if (token) {
+      const response = await fetch(`${APIURL}/users/${user}/routines`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const result = await response.json();
+      console.log("THIS IS MY RESPONSE", result);
+      return result;
+    }
+  } catch (error) {
+    console.error("oh no");
+  }
+};
+
+// POST /api/routines/:routineId/activities
+export const attachActivityToRoutine = async (
+  activityId,
+  count,
+  duration,
+  routineId
+) => {
+  try {
+    const response = await fetch(`${APIURL}/routines/${routineId}/activities`, {
+      method: "POST",
+      body: JSON.stringify({
+        activityId: activityId,
+        count: count,
+        duration: duration,
+      }),
+    });
+    const result = await response.json();
     console.log(result);
     return result;
   } catch (error) {

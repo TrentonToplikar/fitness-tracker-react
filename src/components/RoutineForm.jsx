@@ -44,7 +44,7 @@ export const RoutineForm = ({ token }) => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             type="text"
-            placeholder="Enter Routine Here"
+            placeholder="Enter Name Here"
           ></input>
           <label>Goal:</label>
           <input
@@ -52,20 +52,6 @@ export const RoutineForm = ({ token }) => {
             onChange={(e) => setGoal(e.target.value)}
             type="text"
             placeholder="Enter Goal Here"
-          ></input>
-          <label>Location:</label>
-          <input
-            value={creatorName}
-            onChange={(e) => setCreatorName(e.target.value)}
-            type="text"
-            placeholder="Enter Creator Name Here"
-          ></input>
-          <label>Price:</label>
-          <input
-            value={activities}
-            onChange={(e) => setActivities(e.target.value)}
-            type="text"
-            placeholder="Enter Activities Here"
           ></input>
           <button type="submit">Submit</button>
         </form>

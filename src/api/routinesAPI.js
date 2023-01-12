@@ -19,26 +19,26 @@ export const fetchPublicRoutines = async () => {
   }
 };
 
-// POST /api/routines/:routineId/activities
-export const attachActivityToRoutine = async (
-  activityId,
-  count,
-  duration,
-  routineId
-) => {
-  try {
-    const response = await fetch(`${APIURL}/routines/${routineId}/activities`, {
-      method: "POST",
-      body: JSON.stringify({
-        activityId: activityId,
-        count: count,
-        duration: duration,
-      }),
-    });
-    const result = await response.json();
-    console.log(result);
-    return result;
-  } catch (error) {
-    console.error("oh no");
-  }
-};
+// // POST /api/routines/:routineId/activities
+// export const attachActivityToRoutine = async (
+//   activityId,
+//   count,
+//   duration,
+//   routineId
+// ) => {
+//   try {
+//     const response = await fetch(`${APIURL}/routines/${routineId}/activities`, {
+//       method: "POST",
+//       body: JSON.stringify({
+//         activityId: activityId,
+//         count: count,
+//         duration: duration,
+//       }),
+//     });
+//     const result = await response.json();
+//     console.log(result);
+//     return result;
+//   } catch (error) {
+//     console.error("oh no");
+//   }
+// };
