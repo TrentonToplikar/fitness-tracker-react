@@ -2,7 +2,7 @@
 //Prevents duplication on (routineId, activityId) pair.
 const APIURL = `http://fitnesstrac-kr.herokuapp.com/api`;
 
-// POST /api/routines/:routineId/activities
+// GET /api/routines
 export const fetchPublicRoutines = async () => {
   try {
     const response = await fetch(`${APIURL}/routines`, {

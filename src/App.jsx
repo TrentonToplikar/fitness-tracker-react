@@ -17,6 +17,7 @@ function App() {
   const [ isLoggedIn, setIsLoggedIn ] = useState(false);
   const [ routines, setRoutines ] = useState([])
   const [ myRoutines, setMyRoutines ] = useState([])
+  const [publicRoutineList, setPublicRoutineList] = useState([]);
   // const [ activities, setActivites ] = useState([])      ******THIS NEEDS TO BE COMMENTED BACK IN!
 
 
@@ -52,7 +53,7 @@ function App() {
       <Routes>
 
         {/* Home */}
-        <Route path="/" element ={<Home />} />
+        <Route path="/" element ={<Home publicRoutineList={publicRoutineList} setPublicRoutineList={setPublicRoutineList}/>} />
 
         {/* Login  */}
         <Route path="/Login" element={<LoginForm setToken={setToken} setUser={setUser} />} />
