@@ -6,30 +6,27 @@ const APIURL = `http://fitnesstrac-kr.herokuapp.com/api`;
 // POST /api/users/register
 export const registerUser = async (username, password) => {
   try {
-    const response = await fetch(`${APIURL}/users/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        user: {
-          username: username,
-          password: password,
+    const response = await fetch(
+      "http://fitnesstrac-kr.herokuapp.com/api/users/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      }),
-    });
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      }
+    );
     //object with data that contains a token which is needed to make other request to the API
     //deconstruction of the object data same as token = response.data.token
-    //token used as a key to access other things in the API (bc we must be a register user to utilize the API)
-    // this is saying const token = response.data.token
-    const {
-      data: { token },
-    } = await response.json();
-    //console.log("myresponse data", token);
-    return token;
+    // token used as a key to access other things in the API (bc we must be a register user to utilize the API)
+    const data = await response.json();
+    console.log("my response data:", data);
+    return data;
   } catch (error) {
     console.error(error);
-    console.log("myresponse data", token);
   }
 };
 

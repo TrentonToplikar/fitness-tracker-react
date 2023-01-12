@@ -11,12 +11,13 @@ export const LoginForm = ({ setToken, setUser }) => {
     <form
       onSubmit={async (e) => {
         e.preventDefault();
-        const token = await loginAPI(username, password);
-        const user = await me(token);
+        const data = await loginAPI(username, password);
+        console.log("THIS IS THE DATA!", data)
+        // const user = await me(token);
         // setUser(user.username);
-        setToken(token);
-        localStorage.setItem("token", token);
-        localStorage.setItem("user", user.username);
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", data.user.username);
+        setToken(data.token);
       }}
     >
       <h1> ENTER LOGIN HERE PLEASE</h1>

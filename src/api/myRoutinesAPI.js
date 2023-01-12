@@ -17,10 +17,10 @@ export const createRoutines = async ({
       },
       body: JSON.stringify({
         routinesByUser: {
-          name,
-          goal,
-          creatorName,
-          activities,
+          name: name,
+          goal: goal,
+          creatorName: creatorName,
+          activities: activities,
         },
       }),
     });
