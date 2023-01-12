@@ -28,7 +28,7 @@ const [publicRoutineList, setPublicRoutineList] = useState([]);
     <h3>Goal {goal}</h3>
     <h3>CreatorId {creatorName}</h3>
     {/* <h2>Activity Name {activities.name}</h2> we need to attatch the activites!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
-   
+
   </div>)
   }   
   )

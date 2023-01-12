@@ -60,9 +60,9 @@ export const Navbar = ({ setToken, user }) => {
     const Form = () => {
       if (localStorage.getItem("token")) {
         return (
-          <NavLink to="/PostForm" id="postForm">
+          <NavLink to="/RoutineForm" id="routineForm">
             {" "}
-            PostForm{" "}
+            RoutineForm{" "}
           </NavLink>
         );
       }
