@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { updateRoutine } from "../api/myRoutinesAPI";
+import { updateRoutine, deleteRoutine } from "../api/myRoutinesAPI";
 
 
 
-export const EditForm = ({ privateRoutineList, setPrivateRoutineList, name, goal, isPublic, routineId }) => {
+export const EditForm = ({ privateRoutineList, setPrivateRoutineList, name, goal, isPublic, routineId, success }) => {
     const [creatorName, setCreatorName] = useState("");
     const [activities, setActivities] = useState("");
     const token = localStorage.getItem("token")
@@ -11,6 +11,8 @@ export const EditForm = ({ privateRoutineList, setPrivateRoutineList, name, goal
     const [editName, setEditName ] = useState(name)
     const [editGoal, setEditGoal ] = useState(goal)
     const [editIsPublic, setEditIsPublic] =useState(isPublic)
+    // const [routine, setRoutine] = useState("");
+    // const [success, setSuccess] = useState(success);
 
     const handleSubmit= async (e) => {
       if (token) {
@@ -62,7 +64,28 @@ export const EditForm = ({ privateRoutineList, setPrivateRoutineList, name, goal
             ></input>
           <button type="submit">Submit</button>
         </form> }
+
+
+        
         <button onClick={() => setToggle(!toggle)} type="edit">Edit</button>
+
+        
+        {/* <button onClick={async () => {delete(routine.id)} type="delete">Delete Routine</button> */}
+        <button
+        onClick={async () => {
+          await deleteRoutine( token, routineId);
+            // setPrivateRoutineList([
+            //   ...allPosts.filter((post) => post.id !== postDeleted.id),
+          // ]);
+
+           // const newRoutines = routineList.filter(
+    //   (routine) => routine.id !== routineId
+    // );
+    // setRoutineList(newRoutines);
+        }}
+      >
+        Delete Routine
+      </button>
             </div>
       );
     };

@@ -104,14 +104,22 @@ export const deleteRoutine = async (token, routineId) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
+      body: JSON.stringify({
+        routineId: routineId,
+        success: success,
+        name: name,
+        goal: goal,
+        creatorId: creatorId,
+        isPublic: isPublic,
+      }),
     });
     const result = await response.json();
-    console.log(result);
+    console.log("data from delete: ", result);
 
-    const newRoutines = routineList.filter(
-      (routine) => routine.id !== routineId
-    );
-    setRoutineList(newRoutines);
+    // const newRoutines = routineList.filter(
+    //   (routine) => routine.id !== routineId
+    // );
+    // setRoutineList(newRoutines);
     return result;
   } catch (error) {
     console.error(error);
