@@ -15,10 +15,11 @@ export const ActivityForm = ({ publicActivityList, setPublicActivityList }) => {
     const handleSubmit= async (e) => {
       if (token) {
         console.log("DO WE HAVE THE (activities)TOEKN??", token);
-   
-        
         e.preventDefault();
         const newActivity = await createActivities( token, name, description);
+        if (newActivity.error) {
+          alert(newActivity.message)
+      }
         setPublicActivityList([newActivity, ...publicActivityList])
         setName("");
         setDescription("");

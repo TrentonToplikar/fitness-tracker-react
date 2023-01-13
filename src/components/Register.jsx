@@ -10,11 +10,6 @@ const Register = ({setToken}) => {
     {
     return <div>    
             <form onSubmit={async (e) =>{
-        // if (username === setUsername) {
-        //     alert("Invalid Registration - Username is already taken ");
-        // } else {
-        //     return;
-        // }
         if (password.length > 7 && username.length > 7 ) {
         try {        
         e.preventDefault();

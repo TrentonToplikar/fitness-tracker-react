@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 // import {  } from "react-dom";
 import {fetchMyRoutines} from "../api/myRoutinesAPI";
+import { EditForm } from "./EditRoutine";
 import { RoutineForm } from "./RoutineForm";
+// import { EditForm } from "./EditRoutine";
 
 export const PrivateRoutines= (props) => {
   const [privateRoutineList, setPrivateRoutineList] = useState([]);
@@ -20,12 +22,17 @@ export const PrivateRoutines= (props) => {
     }
   }, []);
 // rending the routine/activities list
-  const routineAndActivitiesList = privateRoutineList?.map(({id, creatorName, name, goal, activities}) => {
+// const editButton = document.createElement("button");
+  // editButton.addEventListener("click", () => {
+  const routineAndActivitiesList = privateRoutineList?.map(({id, creatorName, name, goal, activities, isPublic}) => {
     // console.log("this is our activities!!!!:", activities);
     // console.log(activities.name);
     return( <div className="All Routines" key={id}>
-    <h2>Name: {name}</h2>
-    <h3>Goal: {goal}</h3>
+    <EditForm name={name} goal={goal} ispublic={isPublic} routineId={id}/>
+    {/* <button className="viewpost" onClick={() => setSelectedPost(post)}>
+            Edit
+          </button> */}
+
     <div>
 
       {
@@ -49,6 +56,7 @@ export const PrivateRoutines= (props) => {
     </div>)
 
 }
+
 
 
 

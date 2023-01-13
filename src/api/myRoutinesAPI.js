@@ -70,6 +70,31 @@ export const attachActivityToRoutine = async (
   }
 };
 
+// PATCH /api/routines/:routineId (**)
+
+export const updateRoutine = async (token, name, goal, isPublic, routineId) => {
+  try {
+    const response = await fetch(`${APIURL}/routines/${routineId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        name: name,
+        goal: goal,
+        isPublic: isPublic,
+      }),
+    });
+
+    const result = await response.json();
+    console.log(result);
+    return result;
+  } catch (error) {
+    console.error("oh no");
+  }
+};
+
 // DELETE /api/routines/:routineId (**)
 export const deleteRoutine = async (token, routineId) => {
   try {
