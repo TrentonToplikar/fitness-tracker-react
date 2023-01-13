@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom"
 import { Logout } from "./Login";
 import { PublicRoutines } from "./PublicRoutines";
 import { RoutineForm } from "./RoutineForm";
+import { PublicActivities } from "./PublicActivities";
 
 
 
@@ -62,6 +63,17 @@ export const Navbar = ({ setToken, user }) => {
         );
       
     };
+
+    const PublicActivities = () => {
+     
+      return (
+        <NavLink to="/activities" id="publicActivtives">
+          {" "}
+          Activities{" "}
+        </NavLink>
+      );
+    
+  };
     
     const MyRoutines = () => {
       if (localStorage.getItem("token")) {
@@ -107,6 +119,7 @@ export const Navbar = ({ setToken, user }) => {
             Home{" "}
           </NavLink>
           <PublicRoutines />
+          <PublicActivities />
           <MyRoutines />
         </nav>
         {/* <img id="logo" src="Stranger_Things_logo.png" /> */}

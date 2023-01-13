@@ -8,6 +8,7 @@ import { PublicRoutines} from "./components/PublicRoutines";
 import { PrivateRoutines } from "./components/MyRoutines";
 import { Navbar } from "./components/NavBar";
 import Home from "./components/Home";
+import { PublicActivities } from "./components/PublicActivities";
 // import { ActivityForm } from "./components/Activities";       ******THIS NEEDS TO BE COMMENTED BACK IN!
 
 import './App.css'
@@ -20,6 +21,7 @@ function App() {
   const [ myRoutines, setMyRoutines ] = useState([])
   const [publicRoutineList, setPublicRoutineList] = useState([]);
   const [privateRoutineList, setPrivateRoutineList] = useState([]);
+  const [publicActivityList, setPublicActivityList] = useState([]);
   // const [ activities, setActivites ] = useState([])      ******THIS NEEDS TO BE COMMENTED BACK IN!
 
 
@@ -71,13 +73,12 @@ function App() {
 
         {/* // my routines (private) */}
         <Route path="/MyRoutines" element={<PrivateRoutines privateRoutineList={privateRoutineList} setPrivateRoutineList={setPrivateRoutineList} token ={token} user={user} /> }/>
-        {/* <Route path="/MyRoutines" element={<RoutineForm privateRoutineList={privateRoutineList} setPrivateRoutineList={setPrivateRoutineList} token ={token} user={user} /> }/> */}
+       
 
       
         {/* Activities */}
-        {/* <Route path="/Activities" element={<ActivityForm activities={activities} setActivities=[setActivities] token ={token} /> } /> */}
-        {/* ******THIS NEEDS TO BE COMMENTED BACK IN!^^^^^^^^^^^^^^^^^^ */}
-        
+        <Route path="/Activities" element={<PublicActivities publicActivityList={publicActivityList}  /> } />
+  
 
         {/* //Profile */}
         {/* <Route path="/Profile" element={<Profile} */}

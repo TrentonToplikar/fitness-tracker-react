@@ -1,26 +1,25 @@
 const APIURL = `http://fitnesstrac-kr.herokuapp.com/api`;
 
 // POST /api/activities (*)
-export const createActivity = async (name, description) => {
+export const createActivities = async (token, name, description) => {
   try {
+    console.log("THIS IS MY TOKE", token);
     const response = await fetch(`${APIURL}/activities`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
-        message: {
-          name,
-          description,
-        },
+        name: name,
+        description: description,
       }),
     });
     const result = await response.json();
     console.log(result);
     return result;
   } catch (error) {
-    console.error("oh no");
+    console.error("oh no - activities");
   }
 };
 
@@ -43,9 +42,10 @@ export const updateActivity = async (name, description, activityId) => {
 };
 
 // GET /api/activities
-export const fetchActivities = async () => {
+export const fetchPublicActivities = async () => {
   try {
     const response = await fetch(`${APIURL}/activities`, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },

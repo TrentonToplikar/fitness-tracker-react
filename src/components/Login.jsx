@@ -15,6 +15,9 @@ export const LoginForm = ({ setToken, setUser }) => {
         console.log("THIS IS THE DATA!", data)
         // const user = await me(token);
         // setUser(user.username);
+        if (data.error) {
+          alert(data.message)
+      }
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", data.user.username);
         setToken(data.token);
