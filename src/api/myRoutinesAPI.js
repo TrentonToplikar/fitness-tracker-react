@@ -94,8 +94,39 @@ export const updateRoutine = async (token, name, goal, isPublic, routineId) => {
     console.error("oh no");
   }
 };
-
+////////// JELLENAS
 // DELETE /api/routines/:routineId (**)
+// export const deleteRoutine = async (token, routineId) => {
+//   try {
+//     const response = await fetch(`${APIURL}/routines/${routineId}`, {
+//       method: "DELETE",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${token}`,
+//       },
+//       body: JSON.stringify({
+//         routineId: routineId,
+//         success: success,
+//         name: name,
+//         goal: goal,
+//         creatorId: creatorId,
+//         isPublic: isPublic,
+//       }),
+//     });
+//     const result = await response.json();
+//     console.log("data from delete: ", result);
+
+//     // const newRoutines = routineList.filter(
+//     //   (routine) => routine.id !== routineId
+//     // );
+//     // setRoutineList(newRoutines);
+//     return result;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
+///// TRENTONS---> this works so far 7:23pm
 export const deleteRoutine = async (token, routineId) => {
   try {
     const response = await fetch(`${APIURL}/routines/${routineId}`, {
@@ -104,23 +135,10 @@ export const deleteRoutine = async (token, routineId) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({
-        routineId: routineId,
-        success: success,
-        name: name,
-        goal: goal,
-        creatorId: creatorId,
-        isPublic: isPublic,
-      }),
     });
-    const result = await response.json();
-    console.log("data from delete: ", result);
-
-    // const newRoutines = routineList.filter(
-    //   (routine) => routine.id !== routineId
-    // );
-    // setRoutineList(newRoutines);
-    return result;
+    const data = await response.json();
+    console.log(data);
+    return data;
   } catch (error) {
     console.error(error);
   }

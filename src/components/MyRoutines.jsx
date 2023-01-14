@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-// import {  } from "react-dom";
 import {fetchMyRoutines} from "../api/myRoutinesAPI";
 import { EditForm } from "./EditRoutine";
 import { RoutineForm } from "./RoutineForm";
-// import { EditForm } from "./EditRoutine";
+// import { DeleteButton } from "./DeleteRoutine";
+// import {  } from "react-dom";
 
 export const PrivateRoutines= (props) => {
   const [privateRoutineList, setPrivateRoutineList] = useState([]);
@@ -29,6 +29,7 @@ export const PrivateRoutines= (props) => {
     // console.log(activities.name);
     return( <div className="All Routines" key={id}>
     <EditForm name={name} goal={goal} ispublic={isPublic} routineId={id}/>
+    {/* <DeleteButton /> */}
     {/* <button className="viewpost" onClick={() => setSelectedPost(post)}>
             Edit
           </button> */}

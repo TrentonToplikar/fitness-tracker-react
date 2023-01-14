@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { updateRoutine, deleteRoutine } from "../api/myRoutinesAPI";
+import { updateRoutine } from "../api/myRoutinesAPI";
+import { deleteRoutine } from "../api/myRoutinesAPI";
 
 
 
@@ -64,13 +65,7 @@ export const EditForm = ({ privateRoutineList, setPrivateRoutineList, name, goal
             ></input>
           <button type="submit">Submit</button>
         </form> }
-
-
-        
         <button onClick={() => setToggle(!toggle)} type="edit">Edit</button>
-
-        
-        {/* <button onClick={async () => {delete(routine.id)} type="delete">Delete Routine</button> */}
         <button
         onClick={async () => {
           await deleteRoutine( token, routineId);
