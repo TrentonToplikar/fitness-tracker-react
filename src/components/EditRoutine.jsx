@@ -19,7 +19,7 @@ export const EditForm = ({ privateRoutineList, setPrivateRoutineList, name, goal
       if (token) {
         console.log("DO WE HAVE THE TOEKN??", token)
         e.preventDefault();
-       const newRoutine = await updateRoutine( token, editName, editGoal, editIsPublic, routineId );
+        await updateRoutine( token, editName, editGoal, editIsPublic, routineId );
         // setPrivateRoutineList([newRoutine, ...privateRoutineList])
         // setName("");
         // setGoal("");
@@ -29,6 +29,12 @@ export const EditForm = ({ privateRoutineList, setPrivateRoutineList, name, goal
       } else {
         window.alert("Please Login or Register");
       }
+
+      // if (token) {
+      //   e.preventDefault();
+      //   await deleteRoutine(token, routineId);
+      //   setToggle(!toggle);
+      // }
     }
 
     return (
@@ -65,12 +71,15 @@ export const EditForm = ({ privateRoutineList, setPrivateRoutineList, name, goal
             ></input>
           <button type="submit">Submit</button>
         </form> }
+
+        
         <button onClick={() => setToggle(!toggle)} type="edit">Edit</button>
+        {/* <button onClick={() => setToggle(!toggle)} type="delete">Delete Routine</button> */}
         <button
         onClick={async () => {
           await deleteRoutine( token, routineId);
-            // setPrivateRoutineList([
-            //   ...allPosts.filter((post) => post.id !== postDeleted.id),
+          //   setPrivateRoutineList([
+          //     ...allPosts.filter((post) => post.id !== postDeleted.id),
           // ]);
 
            // const newRoutines = routineList.filter(
@@ -81,6 +90,9 @@ export const EditForm = ({ privateRoutineList, setPrivateRoutineList, name, goal
       >
         Delete Routine
       </button>
+
+
+      
             </div>
       );
     };
