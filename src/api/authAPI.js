@@ -1,8 +1,5 @@
 const APIURL = `http://fitnesstrac-kr.herokuapp.com/api`;
 
-//registering a user to our API
-//sends response and shows a token in an object
-
 // POST /api/users/register
 export const registerUser = async (username, password) => {
   try {
@@ -19,9 +16,6 @@ export const registerUser = async (username, password) => {
         }),
       }
     );
-    //object with data that contains a token which is needed to make other request to the API
-    //deconstruction of the object data same as token = response.data.token
-    // token used as a key to access other things in the API (bc we must be a register user to utilize the API)
     const data = await response.json();
     console.log("my response data:", data);
     return data;
@@ -31,7 +25,6 @@ export const registerUser = async (username, password) => {
 };
 
 export const authenticateUser = async (username, password, type) => {
-  // console.log('authenticating user! method type: ', method);
   try {
     const response = await fetch(`${APIURL}/users/${type}`, {
       method: "POST",
@@ -47,7 +40,6 @@ export const authenticateUser = async (username, password, type) => {
     });
 
     const result = await response.json();
-    // console.log(result.data);
     if (!result.data.token) {
       return;
     } else {
@@ -60,8 +52,6 @@ export const authenticateUser = async (username, password, type) => {
   }
 };
 
-//another API request that is going to take in a token
-//takes the token in and returns data
 export const me = async () => {
   try {
     const token = window.localStorage.getItem("token");

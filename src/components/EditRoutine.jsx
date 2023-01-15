@@ -5,9 +5,7 @@ import { attachActivityToRoutine } from "../api/myRoutinesAPI";
 
 
 
-export const EditForm = ({ privateRoutineList, setPrivateRoutineList, name, goal, isPublic, routineId}) => {
-    const [creatorName, setCreatorName] = useState("");
-    const [activities, setActivities] = useState("");
+export const EditForm = ({ name, goal, isPublic, routineId}) => {
     const token = localStorage.getItem("token")
     const [toggle, setToggle ] = useState(false)
     const [editName, setEditName ] = useState(name)
@@ -16,9 +14,6 @@ export const EditForm = ({ privateRoutineList, setPrivateRoutineList, name, goal
     const [activityToggle, setActivityToggle ] = useState()
     const [count, setCount ] = useState("")
     const [duration, setDuration ] = useState("")
-
-    // const [routine, setRoutine] = useState("");
-    // const [success, setSuccess] = useState(success);
 
     const handleSubmit= async (e) => {
       if (token) {
@@ -139,6 +134,7 @@ export const EditForm = ({ privateRoutineList, setPrivateRoutineList, name, goal
     
         <button
         onClick={async () => {
+          // const setPrivateRoutineList = 
           await deleteRoutine( token, routineId);
           //   setPrivateRoutineList([
           //     ...allPosts.filter((post) => post.id !== postDeleted.id),

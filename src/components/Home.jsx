@@ -4,7 +4,10 @@ import React from "react";
 const Home = () => {
   return (
     <>
-      <div>This is the home page!</div>
+      <div>Welcome to fitness-Tracker!</div>
+      <h1>
+        TIME TO PUMP IT UP
+      </h1>
     </>
   );
 };

@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { createActivities } from "../api/activtiesAPI";
 
-// As a REGISTERED USER on the Activities tab, I want to:
-    // be shown a form to create a new activity (by name and description)
-    // be shown an error if the activity already exists
-
+// ************* Form that creates activities ************\\
 export const ActivityForm = ({ publicActivityList, setPublicActivityList }) => {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");

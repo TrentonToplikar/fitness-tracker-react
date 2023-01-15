@@ -2,11 +2,6 @@ import React from "react";
 // import "./NavBar.css";
 import { NavLink } from "react-router-dom"
 import { Logout } from "./Login";
-import { PublicRoutines } from "./PublicRoutines";
-import { RoutineForm } from "./RoutineForm";
-import { PublicActivities } from "./PublicActivities";
-
-
 
 
 export const Navbar = ({ setToken, user }) => {
@@ -33,26 +28,7 @@ export const Navbar = ({ setToken, user }) => {
         );
       }
     };
-  //   const MyRoutines = () => {
-  //     if (localStorage.getItem("token")) {
-  //     return (
-  //       <NavLink
-  //           to="/myRoutines"
-  //           id="MyRoutines"
-  //           onClick={() => {
-  //             RoutineForm();
-  //           }}
-  //           ></NavLink>
-  //     );
-  //   }
-  // //    return (
-  // //     <NavLink to="Login" id="login">
-  // //  {" "}
-  // //    Login{" "}
-  // // GetAllPublicRoutines()
-  // //    </NavLink>
-  // //    );
-  //   };
+
     const PublicRoutines = () => {
      
         return (
@@ -78,7 +54,7 @@ export const Navbar = ({ setToken, user }) => {
     const MyRoutines = () => {
       if (localStorage.getItem("token")) {
         return (
-          <NavLink to="MyRoutines" id="RoutineForm">
+          <NavLink to="myroutines" id="RoutineForm">
             {" "}
             MyRoutines{" "}
           </NavLink>
@@ -111,6 +87,7 @@ export const Navbar = ({ setToken, user }) => {
         );
       }
     };
+    
     return (
       <div id="navbar">
         <nav>
@@ -122,7 +99,6 @@ export const Navbar = ({ setToken, user }) => {
           <PublicActivities />
           <MyRoutines />
         </nav>
-        {/* <img id="logo" src="Stranger_Things_logo.png" /> */}
         <nav>
           <RegisterOrProfile />
           <LoginLogout />

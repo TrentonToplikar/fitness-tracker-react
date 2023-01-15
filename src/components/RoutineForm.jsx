@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { createRoutines } from "../api/myRoutinesAPI";
 
-
-
 export const RoutineForm = ({ privateRoutineList, setPrivateRoutineList }) => {
     const [name, setName] = useState("");
     const [goal, setGoal] = useState("");

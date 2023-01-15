@@ -13,11 +13,11 @@ export const LoginForm = ({ setToken, setUser }) => {
         e.preventDefault();
         const data = await loginAPI(username, password);
         console.log("THIS IS THE DATA!", data)
-        // const user = await me(token);
-        // setUser(user.username);
         if (data.error) {
           alert(data.message)
-      }
+      } else {
+        alert(data.message)
+    }
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", data.user.username);
         setToken(data.token);
@@ -43,7 +43,7 @@ export const LoginForm = ({ setToken, setUser }) => {
   );
 };
 
-////////// this logs you out and makes sure your token wont be on the storage anymore \\\\\\\\\\
+
 export const Logout = (setToken) => {
   localStorage.clear();
   setToken();

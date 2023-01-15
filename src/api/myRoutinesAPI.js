@@ -1,6 +1,5 @@
 const APIURL = `http://fitnesstrac-kr.herokuapp.com/api`;
 
-////////// create routines \\\\\\\\\\
 export const createRoutines = async (token, name, goal, isPublic) => {
   try {
     console.log("THIS IS MY TOKE", token);
@@ -101,7 +100,6 @@ export const updateRoutine = async (token, name, goal, isPublic, routineId) => {
   }
 };
 
-///// TRENTONS---> this works so far 7:23pm
 export const deleteRoutine = async (token, routineId) => {
   try {
     const response = await fetch(`${APIURL}/routines/${routineId}`, {
