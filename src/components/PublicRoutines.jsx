@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {fetchPublicRoutines} from "../api/routinesAPI";
+import "./routineANDactivities.css"
 
 export const PublicRoutines= () => {
   const [publicRoutineList, setPublicRoutineList] = useState([]);
@@ -14,7 +15,7 @@ export const PublicRoutines= () => {
   }, []);
   console.log(publicRoutineList);
   const routineAndActivitiesList = publicRoutineList.map(({id, creatorName, name, goal, activities}) => {
-    return( <div className="All Routines" key={id}>
+    return( <div className="AllRoutines" key={id}>
     <h2>Name: {name}</h2>
     <h3>Goal: {goal}</h3>
     <h3>Creator Name: {creatorName}</h3>
@@ -22,7 +23,7 @@ export const PublicRoutines= () => {
 
       {
       activities?.map(({id, name, description, count, duration}) => {
-      return( <div className="All Activities" key={id}>
+      return( <div className="AllActivities" key={id}>
       <h3>Activity Name:  {name}</h3>
       <h4>Description: {description}</h4>
       <h4>Duration: {duration}</h4>
@@ -36,7 +37,7 @@ export const PublicRoutines= () => {
   )
   return (<div>
     <h1>Routines</h1>
-    <div className="All Routines">{routineAndActivitiesList}</div>
+    <div className="AllRoutines">{routineAndActivitiesList}</div>
   </div>
     ) 
 }

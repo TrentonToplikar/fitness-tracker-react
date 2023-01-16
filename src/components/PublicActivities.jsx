@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { fetchPublicActivities } from "../api/activtiesAPI";
 import { ActivityForm } from "./ActivityForm";
+import "./routineANDactivities.css"
 
 // ***************Displays an activity list.... and displays a pop-pup if an unregistered user attempts to create a new activity ************** \\
 export const PublicActivities= (props) => {
@@ -19,7 +20,7 @@ export const PublicActivities= (props) => {
 
   const ActivityList = publicActivityList.map(({id, name, description}) => {
     return( 
-        <div className="All Activities" key={id}>
+        <div className="AllActivities" key={id}>
             <h2>Name: {name}</h2>
             <h3>Description: {description}</h3>
         </div>
@@ -33,12 +34,12 @@ export const PublicActivities= (props) => {
         <div className="ActivityForm"> 
           <ActivityForm publicActivityList={publicActivityList} setPublicActivityList={setPublicActivityList}/>
           <h1>Activities</h1>
-          <div className="All Activities">{ActivityList}</div>
+          <div className="AllActivities">{ActivityList}</div>
         </div>
       </> :
       <div>
         <h1>Activities</h1>
-        <div className="All Activities">{ActivityList}</div>
+        <div className="AllActivities">{ActivityList}</div>
       </div>
       }
     </div>

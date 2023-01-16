@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import {fetchMyRoutines} from "../api/myRoutinesAPI";
 import { EditForm } from "./EditRoutine";
 import { RoutineForm } from "./RoutineForm";
+import "./routineANDactivities.css"
 
 export const PrivateRoutines= (props) => {
   const [privateRoutineList, setPrivateRoutineList] = useState([]);
@@ -18,13 +19,13 @@ export const PrivateRoutines= (props) => {
   }, []);
   const routineAndActivitiesList = privateRoutineList?.map(({id, creatorName, name, goal, activities, isPublic}) => {
     return( 
-    <div className="All Routines" key={id}>
+    <div className="AllRoutines" key={id}>
       <EditForm name={name} goal={goal} ispublic={isPublic} routineId={id}/>
       <div>
         {
         activities?.map(({id, name, description, count, duration}) => {
         return( 
-        <div className="All Activities" key={id}>
+        <div className="AllActivities" key={id}>
           <h3>Activity Name:  {name}</h3>
           <h4>Description: {description}</h4>
           <h4>Duration: {duration}</h4>
@@ -42,7 +43,7 @@ export const PrivateRoutines= (props) => {
       <h1>My Routines</h1>
       <div className="RoutineForm"> 
       <RoutineForm privateRoutineList={privateRoutineList} setPrivateRoutineList={setPrivateRoutineList}/>
-      <div className="All Routines">{routineAndActivitiesList}</div>
+      <div className="AllRoutines">{routineAndActivitiesList}</div>
       </div>
     </div>
     )

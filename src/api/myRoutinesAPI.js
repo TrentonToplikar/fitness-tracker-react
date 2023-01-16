@@ -116,3 +116,20 @@ export const deleteRoutine = async (token, routineId) => {
     console.error(error);
   }
 };
+
+export const deleteActivity = async (token, id) => {
+  try {
+    const response = await fetch(`${APIURL}/routine_activities/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};

@@ -91,18 +91,24 @@ export const Navbar = ({ setToken, user }) => {
     return (
       <div id="navbar">
         <nav>
-          <NavLink to="/" id="home">
-            {" "}
-            Home{" "}
-          </NavLink>
-          <PublicRoutines />
-          <PublicActivities />
-          <MyRoutines />
+          <div>
+            <NavLink to="/" id="home">
+              {" "}
+              Home{" "}
+            </NavLink> |
+            <PublicRoutines /> |
+            <PublicActivities /> 
+          </div>
         </nav>
-        <nav>
-          <RegisterOrProfile />
-          <LoginLogout />
+
+        <nav id="token">
+          <div>
+            <LoginLogout /> | 
+            <RegisterOrProfile /> |
+            <MyRoutines />
+          </div> 
         </nav>
-      </div>
+    </div>
+     
     );
   };

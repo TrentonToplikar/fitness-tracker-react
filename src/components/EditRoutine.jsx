@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { updateRoutine } from "../api/myRoutinesAPI";
+import { deleteActivity, updateRoutine } from "../api/myRoutinesAPI";
 import { deleteRoutine } from "../api/myRoutinesAPI";
 import { attachActivityToRoutine } from "../api/myRoutinesAPI";
 
@@ -20,23 +20,11 @@ export const EditForm = ({ name, goal, isPublic, routineId}) => {
         console.log("DO WE HAVE THE TOEKN??", token)
         e.preventDefault();
         await updateRoutine( token, editName, editGoal, editIsPublic, routineId );
-        // setPrivateRoutineList([newRoutine, ...privateRoutineList])
-        // setName("");
-        // setGoal("");
-        // setCreatorName("");
-        // setActivities("");
         setToggle(!toggle)
       } else {
         window.alert("Please Login or Register");
       }
-
-      // if (token) {
-      //   e.preventDefault();
-      //   await deleteRoutine(token, routineId);
-      //   setToggle(!toggle);
-      // }
     }
-
 
     
     const handleAttachActivity= async (e) => {
@@ -47,21 +35,10 @@ export const EditForm = ({ name, goal, isPublic, routineId}) => {
           routineId,
           count,
           duration );
-        // setPrivateRoutineList([newRoutine, ...privateRoutineList])
-        // setName("");
-        // setGoal("");
-        // setCreatorName("");
-        // setActivities("");
         setActivityToggle(!activityToggle)
       } else {
         window.alert("Please Login or Register");
       }
-
-      // if (token) {
-      //   e.preventDefault();
-      //   await deleteRoutine(token, routineId);
-      //   setToggle(!toggle);
-      // }
     }
 
     return (
@@ -100,13 +77,13 @@ export const EditForm = ({ name, goal, isPublic, routineId}) => {
         </form> }
 
         
-         {!activityToggle ? <>
-
+         
+            {!activityToggle ? <>
             </> :
         <form
           className="RoutineForm"
           onSubmit={ (e) =>
-            handleAttachActivity(e)
+          handleAttachActivity(e)
         }
         >
           <label>Duration:</label>
@@ -125,33 +102,13 @@ export const EditForm = ({ name, goal, isPublic, routineId}) => {
             placeholder="Enter Count Here"
             ></input>
             
-          <button type="submit">Submit</button>
+            <button type="submit">Submit</button>
         </form> }
+            <button onClick={() => setToggle(!toggle)} type="edit">Edit Routine</button>
+            <button onClick={async () => {await deleteRoutine( token, routineId);}}>Delete Routine</button>
 
-
-        
-        <button onClick={() => setToggle(!toggle)} type="edit">Edit Routine</button>
-    
-        <button
-        onClick={async () => {
-          // const setPrivateRoutineList = 
-          await deleteRoutine( token, routineId);
-          //   setPrivateRoutineList([
-          //     ...allPosts.filter((post) => post.id !== postDeleted.id),
-          // ]);
-
-           // const newRoutines = routineList.filter(
-    //   (routine) => routine.id !== routineId
-    // );
-    // setRoutineList(newRoutines);
-        }}
-      >
-        Delete Routine
-      </button>
-      <button onClick={() => setActivityToggle(!activityToggle)} type="edit">Activity</button>
-
-
-      
-            </div>
+            <button onClick={() => setActivityToggle(!activityToggle)} type="edit">Activity</button>
+            <button onClick={async () => {await deleteActivity( token);}}>Delete Activity</button>
+          </div>
       );
     };

@@ -23,7 +23,7 @@ export const LoginForm = ({ setToken, setUser }) => {
         setToken(data.token);
       }}
     >
-      <h1> ENTER LOGIN HERE PLEASE</h1>
+      <h2> ENTER LOGIN HERE PLEASE</h2>
       <label htmlFor="username">Username: </label>
       <input
         value={username}
