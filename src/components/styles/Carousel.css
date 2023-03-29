@@ -1,0 +1,23 @@
+.YFzqO {
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    position: relative;
+    width: 100%;
+    background:  0% 0% / cover rgb(255, 255, 255);
+}
+
+.carousel-caption {
+    text-align: left !important;
+    position: absolute !important;
+    align-items: left !important;
+    top: 10vh;
+    right: 5vw;
+    width: 1200px !important;
+    font-size: 8rem !important;
+}
+
+.slide-para {
+    font-size: 6rem;
+    width: 70%;
+}
