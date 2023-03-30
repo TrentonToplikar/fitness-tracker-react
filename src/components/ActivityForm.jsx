@@ -38,14 +38,14 @@ export const ActivityForm = ({ publicActivityList, setPublicActivityList }) => {
           value={name}
           onChange={(e) => setName(e.target.value)}
           type="text"
-          placeholder="Enter Name Here"
+          placeholder="Enter Name"
         ></input>
         <label>Description:</label>
         <input
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           type="text"
-          placeholder="Enter Description Here"
+          placeholder="Enter Description"
         ></input>
         <button type="submit">Submit</button>
       </form>

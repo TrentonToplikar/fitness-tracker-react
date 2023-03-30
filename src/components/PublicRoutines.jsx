@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {fetchPublicRoutines} from "../api/routinesAPI";
-import "./routineANDactivities.css"
+import "./styles/PublicRoutines.css"
 
 export const PublicRoutines= () => {
   const [publicRoutineList, setPublicRoutineList] = useState([]);

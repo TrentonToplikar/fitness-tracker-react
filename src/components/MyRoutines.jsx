@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import {fetchMyRoutines} from "../api/myRoutinesAPI";
 import { EditForm } from "./EditRoutine";
 import { RoutineForm } from "./RoutineForm";
-import "./routineANDactivities.css"
-
+import "./styles/PublicRoutines.css"
 export const PrivateRoutines= (props) => {
   const [privateRoutineList, setPrivateRoutineList] = useState([]);
   
