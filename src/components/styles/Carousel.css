@@ -11,13 +11,14 @@
     text-align: left !important;
     position: absolute !important;
     align-items: left !important;
-    margin-top: 25px;
     top: 15vh;
     right: 5vw;
     font-size: 8rem !important;
 }
 .slide-label {
     font-weight: 900;
+    border-bottom: 1.5px solid white;
+    width: fit-content;
 }
 .slide-para {
     font-size: 60%;

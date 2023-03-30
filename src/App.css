@@ -42,11 +42,13 @@ a#home {
   color: black;
 }
 #publicRoutines {
+  margin-left: 4px;
   height: 28px;
   font-weight: 800;
   color: black;
 }
 #publicActivtives {
+  margin-left: 4px;
   height: 28px;
   font-weight: 800;
   color: black;
@@ -57,11 +59,13 @@ a#home {
   color: black;
 }
 #profile {
+  margin-left: 4px;
   height: 28px;
   font-weight: 800;
   color: black;
 }
 #routineForm {
+  margin-left: 4px;
   height: 28px;
   font-weight: 800;
   color: black;

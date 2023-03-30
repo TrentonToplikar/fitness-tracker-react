@@ -1,0 +1,84 @@
+.routines-container {
+    color: rgb(247, 245, 245);
+    background: linear-gradient(90deg, hsla(285, 39%, 85%, 1) 9%, hsla(13, 79%, 81%, 1) 91%);
+}
+.routines-header {
+    font-size: 5rem;
+    font-weight: 800;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgb(0, 0, 0);
+    transition: .5s;
+}
+.routines-header:hover {
+    font-size: 6rem;
+}
+
+.child-activity {
+    padding: 30px !important;
+}
+.routine-words {
+    font-weight: 700;
+    color: black;
+}
+.activities-container {
+    z-index: 1000;
+}
+.allActivities {
+    display: flex;
+    padding: 5px;
+}
+form {
+    background-color: lightblue;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 2px;
+    margin-top: 20px;
+    
+}
+tr {
+    display: table-row;
+}
+table tbody {
+    width: 50%;
+    display: table;
+}
+table {
+    text-align: left;
+    display: table;
+    justify-content: center;
+    caption-side: bottom;
+    border-collapse: collapse;
+    border-spacing: 2px;
+}
+tbody {
+    display: table;
+    vertical-align: middle;
+}
+table td {
+    border: 2px solid black;
+}
+tbody td, tbody th {
+    padding: 0.4444444444rem 0.5555555556rem 0.5555555556rem;
+}
+tbody tr:nth-child(even) {
+    border-bottom: 0;
+    background-color: #f1f1f1;
+    z-index: 1001;
+}
+th {
+    width: 200px;
+}
+td {
+    width: 200px;
+    color: black;
+}
+.tbody-header {
+    border: 1px solid #0086B3;
+    background-color: #0086B3;
+}
+
+.horizontal-rule {
+    border: 2px solid rgb(16, 8, 248);
+    border-radius: 50%;
+}

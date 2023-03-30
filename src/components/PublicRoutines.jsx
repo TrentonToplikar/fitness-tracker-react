@@ -15,29 +15,48 @@ export const PublicRoutines= () => {
   }, []);
   console.log(publicRoutineList);
   const routineAndActivitiesList = publicRoutineList.map(({id, creatorName, name, goal, activities}) => {
-    return( <div className="AllRoutines" key={id}>
-    <h2>Name: {name}</h2>
-    <h3>Goal: {goal}</h3>
-    <h3>Creator Name: {creatorName}</h3>
-    <div>
-
-      {
-      activities?.map(({id, name, description, count, duration}) => {
-      return( <div className="AllActivities" key={id}>
-      <h3>Activity Name:  {name}</h3>
-      <h4>Description: {description}</h4>
-      <h4>Duration: {duration}</h4>
-      <h4>Count: {count}</h4>
+    return( 
+      <div className="child-routine-activity" key={id}>
+        <div className="child-routine">
+          <h2 className="routine-words">Name: {name}</h2>
+          <h3 className="routine-words">Goal: {goal}</h3>
+          <h3 className="routine-words">Creator Name: {creatorName}</h3>
+        </div>
+        <div className="child-activity">
+              <table className="allActivities activity-header" key={id}>
+                <tbody className="tbody-header">
+                  <tr>
+                    <th>Activity Name</th>
+                    <th>Description</th>
+                    <th>Duration</th>
+                    <th>Count</th>
+                  </tr>
+                </tbody>
+              </table>
+          { activities?.map(({id, name, description, count, duration}) => {
+            return( 
+              <table className="allActivities " key={id}>
+                <tbody>
+                  <tr className="activity-content">
+                    <td>{name}</td>
+                    <td>{description}</td>
+                    <td>{duration}</td>
+                    <td>{count}</td>
+                  </tr>
+                </tbody>
+              </table>
+          )})
+          }
       </div>
-        )})
-      }
-    </div>
-  </div>)
+      <hr className="horizontal-rule" />
+      </div>
+  )
   }   
   )
-  return (<div>
-    <h1>Routines</h1>
-    <div className="AllRoutines">{routineAndActivitiesList}</div>
+  return (
+  <div className="routines-container">
+    <h1 className="routines-header">Routines</h1>
+    <div className="routines-container">{routineAndActivitiesList}</div>
   </div>
     ) 
 }

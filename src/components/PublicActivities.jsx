@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { fetchPublicActivities } from "../api/activtiesAPI";
 import { ActivityForm } from "./ActivityForm";
-import "./routineANDactivities.css"
+import "./styles/routineANDactivities.css"
 
 // ***************Displays an activity list.... and displays a pop-pup if an unregistered user attempts to create a new activity ************** \\
 export const PublicActivities= (props) => {
