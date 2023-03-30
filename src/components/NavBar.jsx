@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles/NavBar.css";
 import { NavLink } from "react-router-dom"
 import { Logout } from "./Login";
 
@@ -12,6 +11,7 @@ export const Navbar = ({ setToken, user }) => {
           <NavLink
             to="/"
             id="logout"
+            className="hover-underline-animation"
             onClick={() => {
               Logout(setToken);
             }}
@@ -21,7 +21,7 @@ export const Navbar = ({ setToken, user }) => {
         );
       } else {
         return (
-          <NavLink to="Login" id="login">
+          <NavLink to="Login" id="login" className="hover-underline-animation">
             {" "}
             Login{" "}
           </NavLink>
@@ -30,9 +30,8 @@ export const Navbar = ({ setToken, user }) => {
     };
 
     const PublicRoutines = () => {
-     
         return (
-          <NavLink to="/routines" id="publicRoutines">
+          <NavLink to="/routines" id="publicRoutines" className="hover-underline-animation">
             {" "}
             Routines{" "}
           </NavLink>
@@ -41,9 +40,8 @@ export const Navbar = ({ setToken, user }) => {
     };
 
     const PublicActivities = () => {
-     
       return (
-        <NavLink to="/activities" id="publicActivtives">
+        <NavLink to="/activities" id="publicActivtives" className="hover-underline-animation">
           {" "}
           Activities{" "}
         </NavLink>
@@ -54,14 +52,14 @@ export const Navbar = ({ setToken, user }) => {
     const MyRoutines = () => {
       if (localStorage.getItem("token")) {
         return (
-          <NavLink to="myroutines" id="RoutineForm">
+          <NavLink to="myroutines" id="routineForm" className="hover-underline-animation">
             {" "}
             MyRoutines{" "}
           </NavLink>
         );
       } else {
         return (
-          <NavLink to="Login" id="login">
+          <NavLink to="Login" id="login" className="hover-underline-animation">
             {" "}
             {localStorage.getItem("user")}{" "}
           </NavLink>
@@ -73,14 +71,14 @@ export const Navbar = ({ setToken, user }) => {
     const RegisterOrProfile = () => {
       if (localStorage.getItem("token")) {
         return (
-          <NavLink to="Profile" id="profile">
+          <NavLink to="Profile" id="profile" className="hover-underline-animation">
             {" "}
             {localStorage.getItem("user")}{" "}
           </NavLink>
         );
       } else {
         return (
-          <NavLink to="Register" id="register">
+          <NavLink to="Register" id="register" className="hover-underline-animation">
             {" "}
             Register{" "}
           </NavLink>
@@ -88,27 +86,28 @@ export const Navbar = ({ setToken, user }) => {
       }
     };
     
+    
     return (
-      <div id="navbar">
         <nav>
-          <div>
-            <NavLink to="/" id="home">
-              {" "}
-              Home{" "}
-            </NavLink> |
-            <PublicRoutines /> |
-            <PublicActivities /> 
+          <div className="top-of-page">
+            Improve your health with as little as 15 minutes of exercise today!
           </div>
-        </nav>
+          <div className="navigation-bar">
+            <div className="left-nav">
+              <NavLink to="/" id="home" className="hover-underline-animation">
+                {" "}
+                Home{" "}
+              </NavLink> |
+              <PublicRoutines /> |
+              <PublicActivities /> 
+            </div>
 
-        <nav id="token">
-          <div>
-            <LoginLogout /> | 
-            <RegisterOrProfile /> |
-            <MyRoutines />
-          </div> 
-        </nav>
-    </div>
-     
+            <div className="right-nav">
+              <LoginLogout /> | 
+              <RegisterOrProfile /> |
+              <MyRoutines />
+            </div> 
+          </div>
+        </nav>     
     );
   };

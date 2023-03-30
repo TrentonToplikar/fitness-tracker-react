@@ -8,7 +8,7 @@ import { PrivateRoutines } from "./components/MyRoutines";
 import { Navbar } from "./components/NavBar";
 import Home from "./components/Home";
 import { PublicActivities } from "./components/PublicActivities";
-
+import Footer from "./components/Footer";
 import './App.css'
 
 function App() {
@@ -57,6 +57,7 @@ function App() {
         <Route path="/Activities" element={<PublicActivities publicActivityList={publicActivityList} /> } />
       
       </Routes>
+      <Footer />
     </div>
   )
 }

@@ -1,3 +1,154 @@
 #root {
   text-align: center;
 }
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+}
+nav {
+  height: 50px !important;
+  background: linear-gradient(90deg, hsla(285, 39%, 85%, 1) 9%, hsla(13, 79%, 81%, 1) 91%);
+  position: sticky;
+  top: 0px;
+  z-index: 102;
+  padding-bottom: 60px;
+}
+.top-of-page {
+  font-weight: 800;
+}
+.navigation-bar {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10%;
+  padding-left: 15%;
+  z-index: 99;
+  font-size: 1.5rem;
+  color: black;
+  min-width: 832px;
+  line-height: 1;
+}
+.active-navbar {
+  background-color: pink;
+  z-index: 101;
+}
+a#home {
+  height: 28px;
+  font-weight: 800;
+  color: black;
+}
+#publicRoutines {
+  height: 28px;
+  font-weight: 800;
+  color: black;
+}
+#publicActivtives {
+  height: 28px;
+  font-weight: 800;
+  color: black;
+}
+#logout {
+  height: 28px;
+  font-weight: 800;
+  color: black;
+}
+#profile {
+  height: 28px;
+  font-weight: 800;
+  color: black;
+}
+#routineForm {
+  height: 28px;
+  font-weight: 800;
+  color: black;
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.container {
+  height: 100px;
+}
+
+/****** Footer *******/
+.footer-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 400px;
+  border: 12px solid rgba(128, 128, 128, 0.168);
+}
+.main-container {
+display: flex;
+justify-content: center;
+width: 100% !important;
+height: 200px;
+gap: 5%;
+margin-bottom: 30px;
+}
+.contact-img {
+  height: 30px;
+}
+.socials {
+  margin-top: 10px;
+}
+hr {
+  color: #002a3a;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.img-fitness-div {
+  display: flex;
+  align-items: center;
+}
+.child-container1 {
+
+  color: #002a3a;
+  width: 200px;
+  text-align: left;
+}
+.child-container2 {
+  color: #002a3a;
+  width: 200px;
+  text-align: left;
+}
+.child-container3 {
+  color: #002a3a;
+  width: 200px;
+  text-align: left;
+}
+.child-container4 {
+  color: #002a3a;
+  min-width: 189px;
+  text-align: left;
+}
+.social-img {
+  margin: 5px;
+  width: 60px;
+}
+.fitness-img {
+  width: 50px;
+}

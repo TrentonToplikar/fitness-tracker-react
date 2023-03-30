@@ -11,13 +11,25 @@
     text-align: left !important;
     position: absolute !important;
     align-items: left !important;
-    top: 10vh;
+    margin-top: 25px;
+    top: 15vh;
     right: 5vw;
-    width: 1200px !important;
     font-size: 8rem !important;
 }
-
+.slide-label {
+    font-weight: 900;
+}
 .slide-para {
-    font-size: 6rem;
-    width: 70%;
+    font-size: 60%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    position: relative;
+    width: 60%;
+    min-width: 490px;
+    font-weight: 900;
+
+}
+.carousel-item {
+    max-height: 100vh;
 }
