@@ -1,11 +1,21 @@
 import React, {useState} from "react";
 import { registerUser } from "../api/authAPI.js";
+import { NavLink } from "react-router-dom"
+
 import './styles/Register.css'
 
 const Register = ({setToken, setUser}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     {
+        const Login = () => {
+              return (
+                <NavLink to="login" id="login" className="hover-underline-animation">
+                  {" "}
+                  Login{" "}
+                </NavLink>
+              );
+          };
     return (
         <div className="register-container">    
             <form className="register-form" onSubmit={async (e) =>{
@@ -37,6 +47,7 @@ const Register = ({setToken, setUser}) => {
                             <input className="form-input" id="User" value={username} type='text' placeholder="username" onChange={(e)=>setUsername(e.target.value)}></input>
                             <input className="form-input" id="Pass" value={password} type='password' placeholder='password' onChange={(e)=>setPassword(e.target.value)}></input>
                             <button className="login-button">Sign In</button>
+                            {/* <Login /> */}
                     </div>
                 </div>
             </form>

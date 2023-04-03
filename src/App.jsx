@@ -42,22 +42,22 @@ function App() {
         <Route path="/" element ={<Home  />} />
 
         {/* Login  */}
-        <Route path="/Login" element={<LoginForm setToken={setToken} setUser={setUser} />} />
+        <Route path="/login" element={<LoginForm setToken={setToken} setUser={setUser} />} />
 
         {/* // register */}
-        <Route path="/Register" element={<Register setToken={setToken} />} />
+        <Route path="/register" element={<Register setToken={setToken} />} />
 
         {/* // profile */}
-        <Route path="/Profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile />} />
 
         {/* //(main)Routines(public) */}
-        <Route path="/Routines" element={<PublicRoutines publicRoutineList={publicRoutineList} setPublicRoutineList={setPublicRoutineList}/> } />
+        <Route path="/routines" element={<PublicRoutines publicRoutineList={publicRoutineList} setPublicRoutineList={setPublicRoutineList}/> } />
 
         {/* // my routines (private) */}
-        <Route path="/MyRoutines" element={<PrivateRoutines privateRoutineList={privateRoutineList} setPrivateRoutineList={setPrivateRoutineList} token ={token} user={user} /> }/>
+        <Route path="/myRoutines" element={<PrivateRoutines privateRoutineList={privateRoutineList} setPrivateRoutineList={setPrivateRoutineList} token ={token} user={user} /> }/>
        
         {/* Activities */}
-        <Route path="/Activities" element={<PublicActivities publicActivityList={publicActivityList} /> } />
+        <Route path="/Login" element={<PublicActivities publicActivityList={publicActivityList} /> } />
         
       </Routes>
       <Footer />
