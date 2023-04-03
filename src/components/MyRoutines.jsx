@@ -3,6 +3,7 @@ import {fetchMyRoutines} from "../api/myRoutinesAPI";
 import { EditForm } from "./EditRoutine";
 import { RoutineForm } from "./RoutineForm";
 import "./styles/PublicRoutines.css"
+
 export const PrivateRoutines= (props) => {
   const [privateRoutineList, setPrivateRoutineList] = useState([]);
   
@@ -18,7 +19,7 @@ export const PrivateRoutines= (props) => {
   }, []);
   const routineAndActivitiesList = privateRoutineList?.map(({id, creatorName, name, goal, activities, isPublic}) => {
     return( 
-    <div className="AllRoutines" key={id}>
+    <div className="my-individual-routines-container" key={id}>
       <EditForm name={name} goal={goal} ispublic={isPublic} routineId={id}/>
       <div>
         {
@@ -38,11 +39,11 @@ export const PrivateRoutines= (props) => {
   )
 
   return (
-    <div>
-      <h1>My Routines</h1>
+    <div className="my-routine-container">
+    <h1 className="routines-header">My Routines</h1>
       <div className="RoutineForm"> 
       <RoutineForm privateRoutineList={privateRoutineList} setPrivateRoutineList={setPrivateRoutineList}/>
-      <div className="AllRoutines">{routineAndActivitiesList}</div>
+      <div className="my-routines-child">{routineAndActivitiesList}</div>
       </div>
     </div>
     )

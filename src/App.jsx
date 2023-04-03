@@ -54,7 +54,7 @@ function App() {
        
         {/* Activities */}
         <Route path="/Activities" element={<PublicActivities publicActivityList={publicActivityList} /> } />
-      
+        
       </Routes>
       <Footer />
     </div>

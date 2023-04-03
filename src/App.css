@@ -24,62 +24,69 @@ nav {
 .navigation-bar {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
   padding-right: 10%;
   padding-left: 15%;
   z-index: 99;
   font-size: 1.5rem;
+  background: linear-gradient(90deg, hsla(285, 39%, 85%, 1) 9%, hsla(13, 79%, 81%, 1) 91%);
   color: black;
-  min-width: 832px;
-  line-height: 1;
+  padding-bottom:  8px;
 }
-.active-navbar {
-  background-color: pink;
-  z-index: 101;
-}
+
 a#home {
   height: 28px;
   font-weight: 800;
   color: black;
+  padding-bottom: 33px;
 }
 #publicRoutines {
   margin-left: 4px;
   height: 28px;
   font-weight: 800;
   color: black;
+  padding-bottom: 33px;
 }
 #publicActivtives {
   margin-left: 4px;
   height: 28px;
   font-weight: 800;
   color: black;
+  padding-bottom: 33px;
 }
 #login {
   height: 28px;
   font-weight: 800;
   color: black;
+  padding-bottom: 33px;
 }
 #logout {
   height: 28px;
   font-weight: 800;
   color: black;
+  padding-bottom: 33px;
 }
 #register {
   height: 28px;
   font-weight: 800;
   color: black;
   margin-left: 4px;
+  padding-bottom: 33px;
 }
 #profile {
   margin-left: 4px;
   height: 28px;
   font-weight: 800;
   color: black;
+  padding-bottom: 33px;
 }
 #routineForm {
   margin-left: 4px;
   height: 28px;
   font-weight: 800;
   color: black;
+  padding-bottom: 33px;
 }
 .hover-underline-animation {
   display: inline-block;
@@ -166,4 +173,28 @@ hr {
 }
 .fitness-img {
   width: 50px;
+}
+
+
+/******* MEDIA ******/
+@media (min-width: 320px) and (max-width: 800px) {
+  .navigation-bar {
+    display:flex;
+    flex-direction: column;
+  }
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(12, 11, 19, 0.753);
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20%;
+    margin-right: 10%;
+    margin-left: 10%;
+    padding: 60px 28px 20px;
+    width: 100%;
+}
 }

@@ -79,3 +79,40 @@ td {
     transition: all .4s ease-in-out;
     transform: scale(1.1);
 }
+.my-routine-container {
+    padding-top: 50px;
+    padding-bottom: 20%;
+    color: rgb(247, 245, 245);
+    background: linear-gradient(90deg, hsla(285, 39%, 85%, 1) 9%, hsla(13, 79%, 81%, 1) 91%);
+}
+
+.individual-my-routines {
+    border: 2px solid black;
+    margin: 10px;
+    padding: 8px;
+    color: black;
+    transition: ease .4s all;
+    border-radius: 6px;
+}
+.individual-my-routines:hover {
+    transform: scale(1.1);
+}
+
+.edit-my-routine-button {
+    margin: 4px;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    background-color: white;
+}
+.edit-my-routine-input {
+    margin: 4px;
+    padding: 4px;
+    border: none;
+    border-radius: 6px;
+    background-color: white;
+}
+.edit-my-routine-button:hover {
+    background-color: rgb(227, 226, 226);
+
+}

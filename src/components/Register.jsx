@@ -2,14 +2,13 @@ import React, {useState} from "react";
 import { registerUser } from "../api/authAPI.js";
 import './styles/Register.css'
 
-const Register = ({setToken}) => {
+const Register = ({setToken, setUser}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     {
     return (
         <div className="register-container">    
-            <h2>Registration</h2>
-            <form onSubmit={async (e) =>{
+            <form className="register-form" onSubmit={async (e) =>{
                 if (password.length > 7 && username.length > 7 ) {
                 try {        
                     e.preventDefault();
@@ -22,7 +21,11 @@ const Register = ({setToken}) => {
                 }
                 setToken(data.token);
                 localStorage.setItem("token", data.token);
-                                    
+                localStorage.setItem("user", data.user.username);
+
+                setUsername("");
+                setPassword("");
+
                 } catch (error) {
                 console.error(error)
                 }     
@@ -30,7 +33,7 @@ const Register = ({setToken}) => {
             }}>
                 <div className="login-container">
                     <div className="login-form-container">
-                        <h1 className="sign-in">Sign In</h1>
+                        <h1 className="sign-in">Get Started</h1>
                             <input className="form-input" id="User" value={username} type='text' placeholder="username" onChange={(e)=>setUsername(e.target.value)}></input>
                             <input className="form-input" id="Pass" value={password} type='password' placeholder='password' onChange={(e)=>setPassword(e.target.value)}></input>
                             <button className="login-button">Sign In</button>

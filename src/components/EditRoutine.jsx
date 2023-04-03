@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { deleteActivity, updateRoutine } from "../api/myRoutinesAPI";
 import { deleteRoutine } from "../api/myRoutinesAPI";
 import { attachActivityToRoutine } from "../api/myRoutinesAPI";
-
+import './styles/PublicRoutines.css'
 
 
 export const EditForm = ({ name, goal, isPublic, routineId}) => {
@@ -40,7 +40,7 @@ export const EditForm = ({ name, goal, isPublic, routineId}) => {
     }
 
     return (
-        <div>
+        <div className="individual-my-routines">
             {!toggle ? <>
             <h2>Name: {editName}</h2>
             <h3>Goal: {editGoal}</h3>
@@ -53,6 +53,7 @@ export const EditForm = ({ name, goal, isPublic, routineId}) => {
         >
           <label>Routine:</label>
           <input
+          className="edit-my-routine-input"
             value={editName}
             onChange={(e) => setEditName(e.target.value)}
             type="text"
@@ -60,6 +61,7 @@ export const EditForm = ({ name, goal, isPublic, routineId}) => {
             ></input>
           <label>Goal:</label>
           <input
+          className="edit-my-routine-input"
             value={editGoal}
             onChange={(e) => setEditGoal(e.target.value)}
             type="text"
@@ -67,11 +69,12 @@ export const EditForm = ({ name, goal, isPublic, routineId}) => {
             ></input>
             <label>IsPublic?</label>
             <input
+            className="edit-my-routine-input"
             value={editIsPublic}
             onChange={(e) => setEditIsPublic(!editIsPublic)}
             type="checkbox"
             ></input>
-          <button type="submit">Submit</button>
+          <button className="edit-my-routine-button" type="submit">Submit</button>
         </form> }
 
         
@@ -86,6 +89,7 @@ export const EditForm = ({ name, goal, isPublic, routineId}) => {
         >
           <label>Duration:</label>
           <input
+          className="edit-my-routine-input"
             value={duration}
             onChange={(e) => setDuration(e.target.value)
             }
@@ -94,19 +98,20 @@ export const EditForm = ({ name, goal, isPublic, routineId}) => {
             ></input>
           <label>Count:</label>
           <input
+          className="edit-my-routine-input"
             value={count}
             onChange={(e) => setCount(e.target.value)}
             type="text"
             placeholder="Enter Count Here"
             ></input>
             
-            <button type="submit">Submit</button>
+            <button className="edit-my-routine-button" type="submit">Submit</button>
         </form> }
-            <button onClick={() => setToggle(!toggle)} type="edit">Edit Routine</button>
-            <button onClick={async () => {await deleteRoutine( token, routineId);}}>Delete Routine</button>
+            <button className="edit-my-routine-button" onClick={() => setToggle(!toggle)} type="edit">Edit Routine</button>
+            <button className="edit-my-routine-button" onClick={async () => {await deleteRoutine( token, routineId);}}>Delete Routine</button>
 
-            <button onClick={() => setActivityToggle(!activityToggle)} type="edit">Activity</button>
-            <button onClick={async () => {await deleteActivity( token);}}>Delete Activity</button>
+            <button className="edit-my-routine-button" onClick={() => setActivityToggle(!activityToggle)} type="edit">Activity</button>
+            <button className="edit-my-routine-button" onClick={async () => {await deleteActivity( token);}}>Delete Activity</button>
           </div>
       );
     };

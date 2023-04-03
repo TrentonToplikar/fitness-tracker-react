@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 import { Logout } from "./Login";
 
 
-export const Navbar = ({ setToken, user }) => {
+export const Navbar = ({ token, setToken, user }) => {
 
   const LoginLogout = () => {
       if (localStorage.getItem("token")) {
@@ -48,7 +48,8 @@ export const Navbar = ({ setToken, user }) => {
       );
     
   };
-    
+  
+
     const MyRoutines = () => {
       if (localStorage.getItem("token")) {
         return (
@@ -88,7 +89,9 @@ export const Navbar = ({ setToken, user }) => {
     
     
     return (
-        <nav>
+      <div className="navbar-div">
+        {localStorage.getItem("token") ? <>
+          <nav>
           <div className="top-of-page">
             Improve your health with as little as 15 minutes of exercise today!
           </div>
@@ -108,6 +111,32 @@ export const Navbar = ({ setToken, user }) => {
               <MyRoutines />
             </div> 
           </div>
-        </nav>     
+        </nav> 
+        </> :
+             <nav>
+             <div className="top-of-page">
+               Improve your health with as little as 15 minutes of exercise today!
+             </div>
+             <div className="navigation-bar">
+               <div className="left-nav">
+                 <NavLink to="/" id="home" className="hover-underline-animation">
+                   {" "}
+                   Home{" "}
+                 </NavLink> |
+                 <PublicRoutines /> |
+                 <PublicActivities /> 
+               </div>
+   
+               <div className="right-nav">
+                 <LoginLogout /> | 
+                 <RegisterOrProfile /> 
+                 <MyRoutines />
+               </div> 
+             </div>
+           </nav>     
+
+        }
+
+      </div>
     );
   };

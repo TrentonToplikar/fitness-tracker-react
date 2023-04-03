@@ -5,9 +5,7 @@
     align-items: center;
     background: linear-gradient(90deg, hsla(285, 39%, 85%, 1) 9%, hsla(13, 79%, 81%, 1) 91%);
 }
-.Activityform {
-    margin-bottom: 70px;
-}
+
 .activities-header {
     font-size: 5rem;
     font-weight: 800;
@@ -54,6 +52,24 @@
     padding: 10px;
     background: linear-gradient(90deg, rgb(203, 140, 225) 10%, rgb(244, 134, 103) 91%);
     border-radius: 6px;
+    margin-bottom: 70px;
+}
+.my-routine-form {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 50px;
+    background: linear-gradient(90deg, rgb(203, 140, 225) 10%, rgb(244, 134, 103) 91%);
+    border-radius: 6px;
+    margin-bottom: 70px;
+}
+.RoutineForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .activity-input {
     border: 0px;
@@ -63,4 +79,7 @@
 }
 .activity-button {
     border-radius: 6px;
+    border: 0px;
+    padding: 8px;
+    margin: 8px;
 }
