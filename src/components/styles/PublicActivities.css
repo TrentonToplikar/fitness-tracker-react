@@ -37,10 +37,11 @@
     margin-right: 20px !important;
     margin-left: 20px !important;
     border: 2px solid black;
+    transition: ease .4s all;
+
 }
 
 .individual-activity:hover {
-    transition: all .4s ease-in-out;
     transform: scale(1.1);
 }
 .th-activity {
@@ -55,7 +56,7 @@
     margin-bottom: 70px;
 }
 .my-routine-form {
-    width: 100%;
+    min-width: 488px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -82,4 +83,8 @@
     border: 0px;
     padding: 8px;
     margin: 8px;
+}
+.activities-container-posts {
+    display: flex;
+    padding: 5px;
 }

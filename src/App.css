@@ -15,11 +15,14 @@ nav {
   background: linear-gradient(90deg, hsla(285, 39%, 85%, 1) 9%, hsla(13, 79%, 81%, 1) 91%);
   position: sticky;
   top: 0px;
-  z-index: 102;
-  padding-bottom: 60px;
 }
 .top-of-page {
   font-weight: 800;
+}
+.navbar-div {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 .navigation-bar {
   display: flex;
@@ -27,12 +30,12 @@ nav {
   flex-direction: row;
   align-items: center;
   padding-right: 10%;
+  padding-bottom: 6px;
   padding-left: 15%;
-  z-index: 99;
+  z-index: 1000;
   font-size: 1.5rem;
   background: linear-gradient(90deg, hsla(285, 39%, 85%, 1) 9%, hsla(13, 79%, 81%, 1) 91%);
   color: black;
-  padding-bottom:  8px;
 }
 
 a#home {

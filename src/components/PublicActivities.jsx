@@ -19,7 +19,7 @@ export const PublicActivities= (props) => {
   const ActivityList = publicActivityList.slice(470,2000).map(({id, name, description}) => {
     return( 
       <div className=" individual-activity" key={id}>
-              <table className="allActivities activity-header activity-table">
+              <table className="activities-container-posts activity-header activity-table">
                 <tbody className="tbody-header activity-body">
                   <tr>
                     <th className="th-activity">Activity Name</th>
@@ -27,7 +27,7 @@ export const PublicActivities= (props) => {
                   </tr>
                 </tbody>
               </table>
-          <table className="allActivities activity-table" >
+          <table className="activities-container-posts activity-table" >
             <tbody className="activity-body">
               <tr className="activity-content">
                 <td className="activity-dt">{name}</td>

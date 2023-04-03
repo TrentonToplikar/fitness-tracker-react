@@ -17,7 +17,7 @@ export const PrivateRoutines= (props) => {
       getAllPrivateRoutines();
     }
   }, []);
-  const routineAndActivitiesList = privateRoutineList?.map(({id, creatorName, name, goal, activities, isPublic}) => {
+  const routineAndActivitiesList = privateRoutineList?.map(({id, creatorName, name, goal, activities, isPublic, duration}) => {
     return( 
     <div className="my-individual-routines-container" key={id}>
       <EditForm name={name} goal={goal} ispublic={isPublic} routineId={id}/>

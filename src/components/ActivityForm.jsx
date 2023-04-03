@@ -47,7 +47,7 @@ export const ActivityForm = ({ publicActivityList, setPublicActivityList }) => {
           type="text"
           placeholder="Description..."
         ></input>
-        <button className="activity-button" type="submit">Submit</button>
+        <button className="activity-button edit-my-routine-button" type="submit">Submit</button>
       </form>
     );
   };
