@@ -13,7 +13,6 @@ export const PublicRoutines= () => {
     };
     getAllPublicRoutines();
   }, []);
-  console.log(publicRoutineList);
   const routineAndActivitiesList = publicRoutineList.map(({id, creatorName, name, goal, activities}) => {
     return( 
       <div className="child-routine-activity" key={id}>
@@ -36,7 +35,7 @@ export const PublicRoutines= () => {
           { activities?.map(({id, name, description, count, duration}) => {
             return( 
               <table className="allActivities " key={id}>
-                <tbody>
+                <tbody className="tbody-activities">
                   <tr className="activity-content">
                     <td>{name}</td>
                     <td>{description}</td>

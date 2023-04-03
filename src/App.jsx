@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import Register from "./components/Register";
-import { me } from "./api/authAPI.js";
+import { Navbar } from "./components/NavBar";
 import { LoginForm } from "./components/Login";
+import { me } from "./api/authAPI.js";
 import { PublicRoutines} from "./components/PublicRoutines";
 import { PrivateRoutines } from "./components/MyRoutines";
-import { Navbar } from "./components/NavBar";
-import Home from "./components/Home";
 import { PublicActivities } from "./components/PublicActivities";
+import Register from "./components/Register";
+import Home from "./components/Home";
 import Footer from "./components/Footer";
 import './App.css'
 
@@ -25,7 +25,6 @@ function App() {
       const getMe = async () => {
         const username = await me();
         localStorage.setItem("user", username)
-        console.log("THIS IS getMe", username)
         setUser(username);
         setIsLoggedIn(!isLoggedIn);
       };

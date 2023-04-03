@@ -3,7 +3,7 @@ const APIURL = `http://fitnesstrac-kr.herokuapp.com/api`;
 // POST /api/activities (*)
 export const createActivities = async (token, name, description) => {
   try {
-    console.log("THIS IS MY TOKE", token);
+    console.log("THIS IS MY TOKEN", token);
     const response = await fetch(`${APIURL}/activities`, {
       method: "POST",
       headers: {

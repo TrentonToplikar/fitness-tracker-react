@@ -11,7 +11,6 @@ export const RoutineForm = ({ privateRoutineList, setPrivateRoutineList }) => {
 
     const handleSubmit= async (e) => {
       if (token) {
-        console.log("DO WE HAVE THE TOEKN??", token)
         e.preventDefault();
        const newRoutine = await createRoutines( token, name, goal, isPublic );
         setPrivateRoutineList([newRoutine, ...privateRoutineList])

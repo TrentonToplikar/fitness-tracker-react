@@ -74,3 +74,8 @@ td {
     border: 2px solid rgb(16, 8, 248);
     border-radius: 50%;
 }
+
+.tbody-activities:hover {
+    transition: all .4s ease-in-out;
+    transform: scale(1.1);
+}

@@ -11,16 +11,15 @@ export const PublicActivities= (props) => {
   useEffect(() => {
     const getAllPublicActivities = async () => {
       const data = await fetchPublicActivities();
-      setPublicActivityList(data);
-      
+      setPublicActivityList(data);      
     }; 
     getAllPublicActivities();
   }, []);
 
-  const ActivityList = publicActivityList.map(({id, name, description}) => {
+  const ActivityList = publicActivityList.slice(470,2000).map(({id, name, description}) => {
     return( 
-  <div className=" individual-activity">
-              <table className="allActivities activity-header activity-table" key={id}>
+      <div className=" individual-activity" key={id}>
+              <table className="allActivities activity-header activity-table">
                 <tbody className="tbody-header activity-body">
                   <tr>
                     <th className="th-activity">Activity Name</th>
@@ -28,14 +27,14 @@ export const PublicActivities= (props) => {
                   </tr>
                 </tbody>
               </table>
-      <table className="allActivities activity-table" key={id}>
-        <tbody className="activity-body">
-          <tr className="activity-content">
-            <td className="activity-dt">{name}</td>
-            <td className="activity-dt">{description}</td>
-          </tr>
-        </tbody>
-      </table>
+          <table className="allActivities activity-table" >
+            <tbody className="activity-body">
+              <tr className="activity-content">
+                <td className="activity-dt">{name}</td>
+                <td className="activity-dt">{description}</td>
+              </tr>
+            </tbody>
+          </table>
       </div>
         )
       }

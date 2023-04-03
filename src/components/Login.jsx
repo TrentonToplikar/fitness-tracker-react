@@ -12,7 +12,6 @@ export const LoginForm = ({ setToken, setUser }) => {
       onSubmit={async (e) => {
         e.preventDefault();
         const data = await loginAPI(username, password);
-        console.log("THIS IS THE DATA!", data)
         if (data.error) {
           alert(data.message)
       } else {

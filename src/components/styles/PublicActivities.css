@@ -40,6 +40,27 @@
     margin-left: 20px !important;
     border: 2px solid black;
 }
+
+.individual-activity:hover {
+    transition: all .4s ease-in-out;
+    transform: scale(1.1);
+}
 .th-activity {
     color: rgb(228, 228, 228);
+}
+.ActivityForm {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    background: linear-gradient(90deg, rgb(203, 140, 225) 10%, rgb(244, 134, 103) 91%);
+    border-radius: 6px;
+}
+.activity-input {
+    border: 0px;
+    padding: 6px;
+    border-radius: 6px;
+    margin: 10px;
+}
+.activity-button {
+    border-radius: 6px;
 }

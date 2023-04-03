@@ -11,7 +11,6 @@ export const ActivityForm = ({ publicActivityList, setPublicActivityList }) => {
 
     const handleSubmit= async (e) => {
       if (token) {
-        console.log("DO WE HAVE THE (activities)TOEKN??", token);
         e.preventDefault();
         const newActivity = await createActivities( token, name, description);
         if (newActivity.error) {
@@ -20,7 +19,6 @@ export const ActivityForm = ({ publicActivityList, setPublicActivityList }) => {
         setPublicActivityList([newActivity, ...publicActivityList])
         setName("");
         setDescription("");
-     console.log("this is the new activity ----:", newActivity);
       } else {
         window.alert("Please Login or Register");
       }
@@ -33,21 +31,21 @@ export const ActivityForm = ({ publicActivityList, setPublicActivityList }) => {
           handleSubmit(e)
         }
       >
-        <label>Activity:</label>
         <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          placeholder="Enter Name"
+        className="activity-input"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        type="text"
+        placeholder="Enter Activity Name..."
         ></input>
-        <label>Description:</label>
         <input
+        className="activity-input"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           type="text"
-          placeholder="Enter Description"
+          placeholder="Enter Description..."
         ></input>
-        <button type="submit">Submit</button>
+        <button className="activity-button" type="submit">Submit</button>
       </form>
     );
   };
