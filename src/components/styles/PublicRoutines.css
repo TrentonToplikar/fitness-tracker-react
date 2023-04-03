@@ -1,6 +1,10 @@
 .routines-container {
     color: rgb(247, 245, 245);
     background: linear-gradient(90deg, hsla(285, 39%, 85%, 1) 9%, hsla(13, 79%, 81%, 1) 91%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .routines-header {
     font-size: 5rem;
@@ -9,6 +13,8 @@
     padding-bottom: 20px;
     color: rgb(0, 0, 0);
     transition: .5s;
+    width: fit-content;
+    
 }
 .routines-header:hover {
     font-size: 6rem;
@@ -27,9 +33,11 @@
 .allActivities {
     display: flex;
     padding: 5px;
+    width: 100vw
 }
 tr {
     display: table-row;
+    width: 1000px !important;
 }
 table tbody {
     width: 50%;
@@ -49,6 +57,7 @@ tbody {
 }
 table td {
     border: 2px solid black;
+    width: 25%;
 }
 tbody td, tbody th {
     padding: 0.4444444444rem 0.5555555556rem 0.5555555556rem;
@@ -80,6 +89,10 @@ td {
     transform: scale(1.1);
 }
 .my-routine-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding-top: 50px;
     padding-bottom: 20%;
     color: rgb(247, 245, 245);
@@ -114,5 +127,18 @@ td {
 }
 .edit-my-routine-button:hover {
     background-color: rgb(227, 226, 226);
+}
 
+/****** Profile ********/
+
+.profile-container {
+    padding-top: 10vh;
+    background: linear-gradient(90deg, hsla(285, 39%, 85%, 1) 9%, hsla(13, 79%, 81%, 1) 91%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.nothing-to-see-here {
+    padding-bottom: 48vh;
 }

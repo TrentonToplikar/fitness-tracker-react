@@ -9,6 +9,7 @@ import { PublicActivities } from "./components/PublicActivities";
 import Register from "./components/Register";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
+import Profile from "./components/Profile";
 import './App.css'
 
 function App() {
@@ -45,6 +46,9 @@ function App() {
 
         {/* // register */}
         <Route path="/Register" element={<Register setToken={setToken} />} />
+
+        {/* // profile */}
+        <Route path="/Profile" element={<Profile />} />
 
         {/* //(main)Routines(public) */}
         <Route path="/Routines" element={<PublicRoutines publicRoutineList={publicRoutineList} setPublicRoutineList={setPublicRoutineList}/> } />
