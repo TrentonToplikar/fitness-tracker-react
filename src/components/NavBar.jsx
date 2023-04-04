@@ -21,7 +21,7 @@ export const Navbar = ({ token, setToken, user }) => {
         );
       } else {
         return (
-          <NavLink to="login" id="login" className="hover-underline-animation">
+          <NavLink to="Login" id="login" className="hover-underline-animation">
             {" "}
             Login{" "}
           </NavLink>
@@ -60,7 +60,7 @@ export const Navbar = ({ token, setToken, user }) => {
         );
       } else {
         return (
-          <NavLink to="login" id="login" className="hover-underline-animation">
+          <NavLink to="Login" id="login" className="hover-underline-animation">
             {" "}
             {localStorage.getItem("user")}{" "}
           </NavLink>
@@ -72,14 +72,14 @@ export const Navbar = ({ token, setToken, user }) => {
     const RegisterOrProfile = () => {
       if (localStorage.getItem("token")) {
         return (
-          <NavLink to="profile" id="profile" className="hover-underline-animation">
+          <NavLink to="Profile" id="profile" className="hover-underline-animation">
             {" "}
             {localStorage.getItem("user")}{" "}
           </NavLink>
         );
       } else {
         return (
-          <NavLink to="register" id="register" className="hover-underline-animation">
+          <NavLink to="Register" id="register" className="hover-underline-animation">
             {" "}
             Register{" "}
           </NavLink>
@@ -134,10 +134,8 @@ export const Navbar = ({ token, setToken, user }) => {
                </div> 
              </div>
            </nav>     
-
         }
 
       </div>
     );
   };
-

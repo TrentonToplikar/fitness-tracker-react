@@ -36,7 +36,7 @@ export const ControlledCarousel = () => {
           </video>
         <Carousel.Caption>
         <h3 className="slide-label">Reinvented workout machine</h3>
-          <p className="slide-para">Find a local gym near you or enroll online today!</p>
+          <p className="slide-para">Find a local gym near you. Enroll today!</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

@@ -16,8 +16,6 @@ export const LoginForm = ({ setToken, setUser }) => {
         onSubmit={async (e) => {
           e.preventDefault();
           const data = await loginAPI(username, password);
-          setUsername("")
-          setPassword("")
           if (data.error) {
             alert(data.message)
         } else {
@@ -26,6 +24,8 @@ export const LoginForm = ({ setToken, setUser }) => {
           localStorage.setItem("token", data.token);
           localStorage.setItem("user", data.user.username);
           setToken(data.token);
+          setUsername("")
+          setPassword("");
         }}
       >
         <div className="login-container">

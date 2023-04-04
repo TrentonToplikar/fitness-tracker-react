@@ -31,6 +31,7 @@ export const ActivityForm = ({ publicActivityList, setPublicActivityList }) => {
           handleSubmit(e)
         }
       >
+        <div className="activity-inputs">
         <input
         required
         className="activity-input"
@@ -42,11 +43,12 @@ export const ActivityForm = ({ publicActivityList, setPublicActivityList }) => {
         <input
         required
         className="activity-input"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          type="text"
-          placeholder="Description..."
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        type="text"
+        placeholder="Description..."
         ></input>
+        </div>
         <button className="activity-button edit-my-routine-button" type="submit">Submit</button>
       </form>
     );

@@ -57,7 +57,7 @@ function App() {
         <Route path="/myRoutines" element={<PrivateRoutines privateRoutineList={privateRoutineList} setPrivateRoutineList={setPrivateRoutineList} token ={token} user={user} /> }/>
        
         {/* Activities */}
-        <Route path="/Login" element={<PublicActivities publicActivityList={publicActivityList} /> } />
+        <Route path="/activities" element={<PublicActivities publicActivityList={publicActivityList} /> } />
         
       </Routes>
       <Footer />

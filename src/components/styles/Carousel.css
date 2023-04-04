@@ -26,10 +26,8 @@
     object-fit: cover;
     object-position: center top;
     position: relative;
-    width: 60%;
-    min-width: 490px;
+    width: 59%;
     font-weight: 900;
-
 }
 .carousel-item {
     max-height: 100vh;

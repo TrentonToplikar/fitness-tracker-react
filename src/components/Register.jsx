@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import { registerUser } from "../api/authAPI.js";
 import { NavLink } from "react-router-dom"
-
 import './styles/Register.css'
 
 const Register = ({setToken, setUser}) => {
@@ -32,10 +31,8 @@ const Register = ({setToken, setUser}) => {
                 setToken(data.token);
                 localStorage.setItem("token", data.token);
                 localStorage.setItem("user", data.user.username);
-
                 setUsername("");
                 setPassword("");
-
                 } catch (error) {
                 console.error(error)
                 }     

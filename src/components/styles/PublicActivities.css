@@ -49,6 +49,8 @@
 }
 .ActivityForm {
     display: flex;
+    justify-content: center;
+    flex-direction: column;
     flex-wrap: wrap;
     padding: 10px;
     background: linear-gradient(90deg, rgb(203, 140, 225) 10%, rgb(244, 134, 103) 91%);
@@ -77,6 +79,7 @@
     padding: 6px;
     border-radius: 6px;
     margin: 10px;
+    width: 95%;
 }
 .activity-button {
     border-radius: 6px;
